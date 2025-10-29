@@ -6,6 +6,7 @@ import Home from './pages/Home'
 import Footer from './components/Footer'
 import Destination from './pages/Destination'
 import Gallery from './pages/Gallery'
+import Tours from './pages/Tours'
 
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
       <Route path='/' element={<Home/>} />
       <Route path='/destination' element={<Destination/>} />
       <Route path='/gallery' element={<Gallery/>} />
+      <Route path='/tour' element={<Tours/>}/>
     </Routes>
     <Footer/>
 
