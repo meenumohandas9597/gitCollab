@@ -1,5 +1,12 @@
 @import "tailwindcss";
-*{
+
+* {
     font-family: 'Poppins', sans-serif;
 
+}
+
+.dtnfont {
+    font-family: "Pacifico", cursive;
+    font-style: italic;
+    font-weight:normal;
 }

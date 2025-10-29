@@ -26,9 +26,9 @@ const Destination = () => {
               alt="Taiwan"
               className="w-full h-full object-cover rounded-full transform transition-transform duration-[1000ms] ease-in-out group-hover:scale-110"
             />
-            <div className="absolute inset-0  bg-black/25 rounded-full"></div>
+            <div className="absolute inset-0  bg-black/30 rounded-full"></div>
             <div className="absolute inset-0 flex items-center justify-center">
-              <span className="text-white text-2xl font-[Pacifico] drop-shadow-lg">
+              <span className="dtnfont text-white text-4xl  drop-shadow-lg">
                 Taiwan
               </span>
             </div>
@@ -42,9 +42,9 @@ const Destination = () => {
               alt="Taiwan"
               className="w-full h-full object-cover rounded-full transform transition-transform duration-[1000ms] ease-in-out group-hover:scale-110"
             />
-            <div className="absolute inset-0  bg-black/25 rounded-full"></div>
+            <div className="absolute inset-0  bg-black/30 rounded-full"></div>
             <div className="absolute inset-0 flex items-center justify-center">
-              <span className="text-white text-2xl font-[Pacifico] drop-shadow-lg">
+              <span className="dtnfont text-white text-4xl  drop-shadow-lg">
                 Greece
               </span>
             </div>
@@ -57,9 +57,9 @@ const Destination = () => {
               alt="Taiwan"
               className="w-full h-full object-cover rounded-full transform transition-transform duration-[1000ms] ease-in-out group-hover:scale-110"
             />
-            <div className="absolute inset-0  bg-black/25 rounded-full"></div>
+            <div className="absolute inset-0  bg-black/30 rounded-full"></div>
             <div className="absolute inset-0 flex items-center justify-center">
-              <span className="text-white text-2xl font-[Pacifico] drop-shadow-lg">
+              <span className="dtnfont text-white text-4xl  drop-shadow-lg">
                 Netherlands
               </span>
             </div>
@@ -72,9 +72,9 @@ const Destination = () => {
               alt="Taiwan"
               className="w-full h-full object-cover rounded-full transform transition-transform duration-[1000ms] ease-in-out group-hover:scale-110"
             />
-            <div className="absolute inset-0  bg-black/25 rounded-full"></div>
+            <div className="absolute inset-0  bg-black/30 rounded-full"></div>
             <div className="absolute inset-0 flex items-center justify-center">
-              <span className="text-white text-2xl font-[Pacifico] drop-shadow-lg">
+              <span className="dtnfont text-white text-4xl  drop-shadow-lg">
                 Spain
               </span>
             </div>
@@ -87,9 +87,9 @@ const Destination = () => {
               alt="Taiwan"
               className="w-full h-full object-cover rounded-full transform transition-transform duration-[1000ms] ease-in-out group-hover:scale-110"
             />
-            <div className="absolute inset-0  bg-black/25 rounded-full"></div>
+            <div className="absolute inset-0  bg-black/30 rounded-full"></div>
             <div className="absolute inset-0 flex items-center justify-center">
-              <span className="text-white text-2xl font-[Pacifico] drop-shadow-lg">
+              <span className="dtnfont text-white text-4xl  drop-shadow-lg">
                 Australia
               </span>
             </div>
@@ -103,9 +103,9 @@ const Destination = () => {
               alt="Taiwan"
               className="w-full h-full object-cover rounded-full transform transition-transform duration-[1000ms] ease-in-out group-hover:scale-110"
             />
-            <div className="absolute inset-0 bg-black/25 rounded-full"></div>
+            <div className="absolute inset-0 bg-black/30 rounded-full"></div>
             <div className="absolute inset-0 flex items-center justify-center">
-              <span className="text-white text-2xl font-[Pacifico] drop-shadow-lg">
+              <span className="dtnfont text-white text-4xl  drop-shadow-lg">
                 Bali
               </span>
             </div>
@@ -119,9 +119,9 @@ const Destination = () => {
               alt="Taiwan"
               className="w-full h-full object-cover rounded-full transform transition-transform duration-[1000ms] ease-in-out group-hover:scale-110"
             />
-            <div className="absolute inset-0  bg-black/25 rounded-full"></div>
+            <div className="absolute inset-0  bg-black/30 rounded-full"></div>
             <div className="absolute inset-0 flex items-center justify-center">
-              <span className="text-white text-2xl font-[Pacifico] drop-shadow-lg">
+              <span className="dtnfont text-white text-4xl  drop-shadow-lg">
                 Japan
               </span>
             </div>
@@ -135,9 +135,9 @@ const Destination = () => {
               alt="Taiwan"
               className="w-full h-full object-cover rounded-full transform transition-transform duration-[1000ms] ease-in-out group-hover:scale-110"
             />
-            <div className="absolute inset-0  bg-black/25 rounded-full"></div>
+            <div className="absolute inset-0  bg-black/30 rounded-full"></div>
             <div className="absolute inset-0 flex items-center justify-center">
-              <span className="text-white text-2xl font-[Pacifico] drop-shadow-lg">
+              <span className="dtnfont text-white text-4xl  drop-shadow-lg">
                 New York
               </span>
             </div>
@@ -151,9 +151,9 @@ const Destination = () => {
               alt="Taiwan"
               className="w-full h-full object-cover rounded-full transform transition-transform duration-[1000ms] ease-in-out group-hover:scale-110"
             />
-            <div className="absolute inset-0 bg-black/25 rounded-full"></div>
+            <div className="absolute inset-0 bg-black/30 rounded-full"></div>
             <div className="absolute inset-0 flex items-center justify-center">
-              <span className="text-white text-2xl font-[Pacifico] drop-shadow-lg">
+              <span className="dtnfont text-white text-4xl  drop-shadow-lg">
                 Egypt
               </span>
             </div>
@@ -167,9 +167,9 @@ const Destination = () => {
               alt="Taiwan"
               className="w-full h-full object-cover rounded-full transform transition-transform duration-[1000ms] ease-in-out group-hover:scale-110"
             />
-            <div className="absolute inset-0  bg-black/25 rounded-full"></div>
+            <div className="absolute inset-0  bg-black/30 rounded-full"></div>
             <div className="absolute inset-0 flex items-center justify-center">
-              <span className="text-white text-2xl font-[Pacifico] drop-shadow-lg">
+              <span className="dtnfont text-white text-4xl  drop-shadow-lg">
                 Cuba
               </span>
             </div>
@@ -183,9 +183,9 @@ const Destination = () => {
               alt="Taiwan"
               className="w-full h-full object-cover rounded-full transform transition-transform duration-[1000ms] ease-in-out group-hover:scale-110"
             />
-            <div className="absolute inset-0  bg-black/25 rounded-full"></div>
+            <div className="absolute inset-0  bg-black/30 rounded-full"></div>
             <div className="absolute inset-0 flex items-center justify-center">
-              <span className="text-white text-2xl font-[Pacifico] drop-shadow-lg">
+              <span className="dtnfont text-white text-4xl  drop-shadow-lg">
                 Russia
               </span>
             </div>
@@ -198,9 +198,9 @@ const Destination = () => {
               alt="Taiwan"
               className="w-full h-full object-cover rounded-full transform transition-transform duration-[1000ms] ease-in-out group-hover:scale-110"
             />
-            <div className="absolute inset-0 bg-black/25 rounded-full"></div>
+            <div className="absolute inset-0 bg-black/30 rounded-full"></div>
             <div className="absolute inset-0 flex items-center justify-center">
-              <span className="text-white text-2xl font-[Pacifico] drop-shadow-lg">
+              <span className="dtnfont text-white text-4xl  drop-shadow-lg">
                 Italy
               </span>
             </div>
