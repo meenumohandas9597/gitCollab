@@ -8,6 +8,7 @@ import Destination from './pages/Destination'
 import Gallery from './pages/Gallery'
 import Tours from './pages/Tours'
 import Blog from './pages/Blog'
+import DestinationDetail from './pages/DestinationDetail'
 
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
       <Route path='/gallery' element={<Gallery/>} />
       <Route path='/tour' element={<Tours/>}/>
       <Route path='/blog' element={<Blog/>}/>
+       <Route path="/destination/:id" element={<DestinationDetail />} />
     </Routes>
     <Footer/>
 
