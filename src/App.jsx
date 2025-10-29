@@ -7,6 +7,7 @@ import Footer from './components/Footer'
 import Destination from './pages/Destination'
 import Gallery from './pages/Gallery'
 import Tours from './pages/Tours'
+import Blog from './pages/Blog'
 
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
       <Route path='/destination' element={<Destination/>} />
       <Route path='/gallery' element={<Gallery/>} />
       <Route path='/tour' element={<Tours/>}/>
+      <Route path='/blog' element={<Blog/>}/>
     </Routes>
     <Footer/>
 
