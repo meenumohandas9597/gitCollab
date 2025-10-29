@@ -9,6 +9,7 @@ import Gallery from './pages/Gallery'
 import Tours from './pages/Tours'
 import Blog from './pages/Blog'
 import DestinationDetail from './pages/DestinationDetail'
+import LoginRegister from './components/LoginRegister'
 
 
 function App() {
