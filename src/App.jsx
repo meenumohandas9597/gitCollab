@@ -8,7 +8,7 @@ import Destination from './pages/Destination'
 import Gallery from './pages/Gallery'
 import Tours from './pages/Tours'
 import Blog from './pages/Blog'
-import LoginRegister from './components/LoginRegister'
+import DestinationDetail from './pages/DestinationDetail'
 
 
 function App() {
@@ -22,6 +22,7 @@ function App() {
       <Route path='/tour' element={<Tours/>}/>
       <Route path='/login' element={<LoginRegister/>}/>
       <Route path='/blog' element={<Blog/>}/>
+       <Route path="/destination/:id" element={<DestinationDetail />} />
     </Routes>
     <Footer/>
 
