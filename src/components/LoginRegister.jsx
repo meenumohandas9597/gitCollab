@@ -1,26 +1,51 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser, faLock } from "@fortawesome/free-solid-svg-icons";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
+import { useNavigate } from "react-router-dom";
 
 function LoginRegister({ isOpen, onClose }) {
     const [activeTab, setActiveTab] = useState("login");
     const [role, setRole] = useState("user");
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        if (!isOpen) {
+            setUsername("");
+            setPassword("");
+            setRole("user");
+        }
+    }, [isOpen]);
 
 
     const handleLogin = (e) => {
         e.preventDefault();
+        const r = role.toLowerCase();
 
-        if (role === "Admin" && username === "admin" && password === "admin123") {
-            window.location.href = "/admin/dashboard";
-        } else if (role === "User") {
-            window.location.href = "/";
-        } else {
-            alert("Invalid credentials");
+        if (r === "admin" && username === "admin" && password === "admin123") {
+            setUsername("");
+            setPassword("");
+            setRole("user");
+            onClose();
+            navigate("/admin/dashboard");
+            return;
         }
+
+        if (r === "user") {
+            setUsername("");
+            setPassword("");
+            setRole("user");
+            onClose();
+            navigate("/");
+            return;
+        }
+
+        alert("Invalid credentials");
     };
+
+    
 
 
 
