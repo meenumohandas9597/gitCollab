@@ -10,6 +10,7 @@ import Tours from './pages/Tours'
 import Blog from './pages/Blog'
 import DestinationDetail from './pages/DestinationDetail'
 import LoginRegister from './components/LoginRegister'
+import About from './pages/About'
 
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
     <Header/>
     <Routes>
       <Route path='/' element={<Home/>} />
+      <Route path='/about' element={<About/>} />
       <Route path='/destination' element={<Destination/>} />
       <Route path='/gallery' element={<Gallery/>} />
       <Route path='/tour' element={<Tours/>}/>
