@@ -20,7 +20,7 @@ const Destination = () => {
       </div>
 
       <div className="-mt-24 relative z-10 bg-white max-w-6xl mx-auto py-16 px-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 rounded-3xl shadow-xl">
-        {/* ✅ Taiwan */}
+        {/*  Taiwan */}
         <Link to="/destination/taiwan" className="flex items-center justify-center">
           <div className="relative w-64 h-64 rounded-full overflow-hidden shadow-lg group">
             <img
@@ -35,7 +35,7 @@ const Destination = () => {
           </div>
         </Link>
 
-        {/* ✅ Greece */}
+        {/*  Greece */}
         <Link to="/destination/greece" className="flex items-center justify-center">
           <div className="relative w-64 h-64 rounded-full overflow-hidden shadow-lg group">
             <img
@@ -50,7 +50,7 @@ const Destination = () => {
           </div>
         </Link>
 
-        {/* ✅ Netherlands */}
+        {/*  Netherlands */}
         <Link to="/destination/netherlands" className="flex items-center justify-center">
           <div className="relative w-64 h-64 rounded-full overflow-hidden shadow-lg group">
             <img
@@ -65,7 +65,7 @@ const Destination = () => {
           </div>
         </Link>
 
-        {/* ✅ Spain */}
+        {/*  Spain */}
         <Link to="/destination/spain" className="flex items-center justify-center">
           <div className="relative w-64 h-64 rounded-full overflow-hidden shadow-lg group">
             <img

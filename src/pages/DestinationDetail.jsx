@@ -162,7 +162,6 @@ import { useParams, Link } from "react-router-dom";
 
   return (
     <div className="font-sans text-gray-800">
-      {/* Hero */}
       <div
         className="relative h-[70vh] bg-cover bg-center flex flex-col justify-center items-center text-white"
         style={{
@@ -185,9 +184,7 @@ import { useParams, Link } from "react-router-dom";
         </div>
       </div>
 
-      {/* Main white card overlapping hero */}
       <div className="max-w-6xl mx-auto -mt-20 bg-white rounded-2xl shadow-2xl p-6 md:p-12 relative z-20">
-        {/* Overview */}
         <section className="mb-10">
           <h2 className="text-3xl font-bold mb-3">{destination.title}</h2>
           <p className="text-gray-700 leading-relaxed whitespace-pre-line">
@@ -211,9 +208,7 @@ import { useParams, Link } from "react-router-dom";
           </div>
         </section>
 
-        {/* Info + Cities layout */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-10">
-          {/* Left: Good to Know (spans 2 cols on lg) */}
           <div className="lg:col-span-2 space-y-6">
             <section className="bg-cyan-600 text-white rounded-xl p-6">
               <h4 className="text-2xl font-semibold mb-3">Good to Know</h4>
@@ -230,7 +225,6 @@ import { useParams, Link } from "react-router-dom";
             <section>
               <h4 className="text-2xl font-semibold mb-4">About {destination.title}</h4>
               <p className="text-gray-700">
-                {/* small extra paragraph to match screenshot density */}
                 This destination offers a mix of cultural landmarks, scenic nature, &amp; local cuisine — great for short trips and extended stays alike.
               </p>
             </section>
