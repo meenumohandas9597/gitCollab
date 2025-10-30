@@ -11,6 +11,8 @@ import Blog from './pages/Blog'
 import DestinationDetail from './pages/DestinationDetail'
 import LoginRegister from './components/LoginRegister'
 import About from './pages/About'
+import Shop from './pages/Shop'
+import Contact from './pages/Contact'
 
 
 function App() {
@@ -26,6 +28,8 @@ function App() {
       <Route path='/login' element={<LoginRegister/>}/>
       <Route path='/blog' element={<Blog/>}/>
        <Route path="/destination/:id" element={<DestinationDetail />} />
+       <Route path='/shop' element={<Shop/>}/>
+       <Route path='/contact' element={<Contact/>}/>
     </Routes>
     <Footer/>
 

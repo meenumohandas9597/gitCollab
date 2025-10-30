@@ -66,8 +66,8 @@ function Header() {
           <Link to='/destination'><li className="hover:text-[#4ed4d2] cursor-pointer">Destinations</li></Link>
           <Link to='/tour'><li className="hover:text-[#4ed4d2] cursor-pointer">Tours</li></Link>
           <Link to='/blog'><li className="hover:text-[#4ed4d2] cursor-pointer">Blog</li></Link>
-          <Link to='/'><li className="hover:text-[#4ed4d2] cursor-pointer">Shop</li></Link>
-          <Link to='/'><li className="hover:text-[#4ed4d2] cursor-pointer">Contact</li></Link>
+          <Link to='/shop'><li className="hover:text-[#4ed4d2] cursor-pointer">Shop</li></Link>
+          <Link to='/contact'><li className="hover:text-[#4ed4d2] cursor-pointer">Contact</li></Link>
         </ul>
 
         <div className="flex items-center gap-6 text-gray-700 text-2xl hover:text-teal-600">
