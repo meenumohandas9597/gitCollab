@@ -215,7 +215,7 @@ import { useParams, Link } from "react-router-dom";
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-10">
           {/* Left: Good to Know (spans 2 cols on lg) */}
           <div className="lg:col-span-2 space-y-6">
-            <section className="bg-cyan-400 text-white rounded-xl p-6">
+            <section className="bg-cyan-600 text-white rounded-xl p-6">
               <h4 className="text-2xl font-semibold mb-3">Good to Know</h4>
               <p className="mb-4">Helpful facts and tips for planning your visit.</p>
               <ul className="space-y-2">
@@ -255,29 +255,29 @@ import { useParams, Link } from "react-router-dom";
               </div>
             </section>
 
-            <section className="bg-cyan-400 text-white p-4 rounded-xl">
+            <section className="bg-cyan-600 text-white p-4 rounded-xl">
               <h4 className="font-semibold mb-2">Newsletter</h4>
               <p className="text-sm mb-3">Get travel tips & deals for {destination.title}.</p>
               <input
                 type="email"
                 placeholder="Your email"
-                className="w-full p-2 rounded-md mb-2 text-black"
+                className="w-full p-2 border rounded-md mb-2 text-black"
               />
               <button className="w-full bg-white text-black py-2 rounded-md font-semibold">Subscribe</button>
             </section>
           </aside>
         </div>
 
-        <section className="bg-cyan-400 text-white rounded-xl p-6">
+        <section className="bg-cyan-600 text-white rounded-xl p-6">
           <h4 className="text-2xl font-semibold mb-3">Leave a Reply</h4>
           <p className="mb-4">Share your questions or travel experiences.</p>
           <form className="space-y-4">
-            <textarea  className="w-full p-3 rounded-md text-black" rows="4" placeholder="Message*" />
+            <textarea  className="w-full p-3 border rounded-md text-black" rows="4" placeholder="Message*" />
             <div className="grid grid-cols-2 gap-3">
-              <input type="email" className="p-2 rounded-md text-black" placeholder="Email*" />
-              <input type="text" className="p-2 rounded-md text-black" placeholder="Name*" />
+              <input type="email" className="p-2 border rounded-md text-black" placeholder="Email*" />
+              <input type="text" className="p-2 border rounded-md text-black" placeholder="Name*" />
             </div>
-            <button className="bg-white text-black px-6 py-2 rounded-md font-semibold hover:bg-gray-100">Send</button>
+            <button className="bg-white  text-black px-6 py-2 rounded-md font-semibold hover:bg-gray-100">Send</button>
           </form>
         </section>
       </div>
