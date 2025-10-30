@@ -46,7 +46,7 @@ import { useParams, Link } from "react-router-dom";
     greece: {
       title: "Greece",
       heroImage:
-        "https://images.unsplash.com/photo-1524499982521-1ffd58dd89ea?auto=format&fit=crop&w=1600&q=80",
+        "https://www.zicasso.com/static/f0a152d1bc93dc1a7b2fd97679e949b2/508cd/f0a152d1bc93dc1a7b2fd97679e949b2.jpg",
       description: `Greece blends ancient history with bright Aegean islands and sparkling sea views. Visit Athens for the Acropolis, Santorini for iconic sunsets and whitewashed villages, and Crete for food and rugged landscapes. Mediterranean cuisine and slow island life are highlights.`,
       info: {
         country: "Greece",
@@ -56,27 +56,27 @@ import { useParams, Link } from "react-router-dom";
         area: "131,957 km²",
       },
       gallery: [
-        "https://images.unsplash.com/photo-1504274066651-8d31a536b11a?auto=format&fit=crop&w=1200&q=80",
+        "https://wanderon-images.gumlet.io/gallery/new/2025/07/16/1752648567677-places-to-visit-in-greece.jpeg",
         "https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=1200&q=80",
-        "https://images.unsplash.com/photo-1505765050516-f72dcac9c60e?auto=format&fit=crop&w=1200&q=80",
+        "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/2b/d4/0e/ea/caption.jpg?w=1200&h=-1&s=1&cx=1920&cy=1080&chk=v1_686368a229479726f3e9",
         "https://images.unsplash.com/photo-1516483638261-f4dbaf036963?auto=format&fit=crop&w=1200&q=80",
       ],
       municipalities: [
         {
           name: "Athens",
-          img: "https://images.unsplash.com/photo-1590608897129-79da98d15927?auto=format&fit=crop&w=800&q=80",
+          img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSa7FQAhK-CmH8bl91NITZ31DAgkdqBWjCvvA&s",
         },
         {
           name: "Santorini",
-          img: "https://images.unsplash.com/photo-1508341591423-4347099e1f19?auto=format&fit=crop&w=800&q=80",
+          img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTrTRLFwTZCgsBNh0sLGc_QOPTywWmvU7j8jA&s",
         },
         {
           name: "Mykonos",
-          img: "https://images.unsplash.com/photo-1504274066651-8d31a536b11a?auto=format&fit=crop&w=800&q=80",
+          img: "https://content.r9cdn.net/rimg/dimg/63/30/85cee65b-city-46053-1673284fa31.jpg?width=1366&height=768&xhint=1272&yhint=1072&crop=true",
         },
         {
           name: "Crete",
-          img: "https://images.unsplash.com/photo-1518509562904-8e1dcbdbcc9d?auto=format&fit=crop&w=800&q=80",
+          img: "https://media.istockphoto.com/id/545660058/photo/motorboat-at-clear-water-of-loutro-town-on-crete-island.jpg?s=612x612&w=0&k=20&c=tR89klvQp1nSH6DDwI5jFME3Qmtcem2sxqFp-ilDVm8=",
         },
       ],
     },
@@ -94,27 +94,27 @@ import { useParams, Link } from "react-router-dom";
         area: "41,543 km²",
       },
       gallery: [
-        "https://images.unsplash.com/photo-1556740749-887f6717d7e4?auto=format&fit=crop&w=1200&q=80",
-        "https://images.unsplash.com/photo-1503264116251-35a269479413?auto=format&fit=crop&w=1200&q=80",
-        "https://images.unsplash.com/photo-1495435229349-e86db7bfa013?auto=format&fit=crop&w=1200&q=80",
-        "https://images.unsplash.com/photo-1521295121783-8a321d551ad2?auto=format&fit=crop&w=1200&q=80",
+        "https://a.travel-assets.com/findyours-php/viewfinder/images/res70/504000/504084-amsterdam.jpg",
+        "https://hblimg.mmtcdn.com/content/hubble/img/countryimgs/mmt/destination/m_Netherlands_country_images_1_l_617_956.jpg",
+        "https://www.netherlands-tourism.com/wp-content/uploads/2013/11/Amsterdam.jpg",
+        "https://i.natgeofe.com/k/4a509698-ab53-4581-af61-4c4808a81a76/netherlands-tulip-fields.jpg?wp=1&w=1084.125&h=609",
       ],
       municipalities: [
         {
           name: "Amsterdam",
-          img: "https://images.unsplash.com/photo-1549640376-1953e7c9c0c9?auto=format&fit=crop&w=800&q=80",
+          img: "https://static01.nyt.com/images/2023/09/24/multimedia/24-36Hrs-Amsterdam-01-01-cwqt/24-36Hrs-Amsterdam-01-01-cwqt-videoSixteenByNineJumbo1600.jpg",
         },
         {
           name: "Rotterdam",
-          img: "https://images.unsplash.com/photo-1604845025024-3c6e04e6c94e?auto=format&fit=crop&w=800&q=80",
+          img: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/24/86/f1/0c/miniworld-rotterdam.jpg?w=900&h=500&s=1",
         },
         {
           name: "Utrecht",
-          img: "https://images.unsplash.com/photo-1609861279944-33bba2d72f31?auto=format&fit=crop&w=800&q=80",
+          img: "https://lp-cms-production.imgix.net/2025-09/Shutterstock2065956632.jpg?auto=format,compress&q=72&w=1440&h=810&fit=crop",
         },
         {
           name: "The Hague",
-          img: "https://images.unsplash.com/photo-1614876676749-611d2e83b9c9?auto=format&fit=crop&w=800&q=80",
+          img: "https://utrechtbyinge.nl/wp-content/uploads/2024/10/Daens-Greenhouse-coffee-lunch-hotel-where-to-stay-in-Utrecht-city-center-tips-BB--scaled.jpeg",
         },
       ],
     },
@@ -132,27 +132,27 @@ import { useParams, Link } from "react-router-dom";
         area: "505,990 km²",
       },
       gallery: [
-        "https://images.unsplash.com/photo-1526483360412-f4dbaf036963?auto=format&fit=crop&w=1200&q=80",
-        "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=1200&q=80",
-        "https://images.unsplash.com/photo-1494475673543-6a6a27143b16?auto=format&fit=crop&w=1200&q=80",
-        "https://images.unsplash.com/photo-1554057009-1c224f25d3d2?auto=format&fit=crop&w=1200&q=80",
+        "https://assets.vogue.com/photos/6603d64d13a27b5703522946/16:9/w_4496,h_2529,c_limit/509288876",
+        "https://a.travel-assets.com/findyours-php/viewfinder/images/res70/52000/52309-Seville.jpg",
+        "https://www.tripsavvy.com/thmb/DV4YcOy0xT9kcDamIS1jOBOWsMg=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/GettyImages-900638830-42f0d6d3d7074f11af480cec720a909c.jpeg",
+        "https://www.telegraph.co.uk/content/dam/Travel/Destinations/Europe/Spain/Costa%20Brava/Costa%20Brava%20lead%20image.jpg?imwidth=640",
       ],
       municipalities: [
         {
           name: "Madrid",
-          img: "https://images.unsplash.com/photo-1528909514045-2fa4ac7a08ba?auto=format&fit=crop&w=800&q=80",
+          img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ0z6cPZ1AwV6Pz_DvyXMERx9A0YSgfCpSKrg&s",
         },
         {
           name: "Barcelona",
-          img: "https://images.unsplash.com/photo-1511739001486-6bfe10ce785f?auto=format&fit=crop&w=800&q=80",
+          img: "https://www.barcelo.com/guia-turismo/wp-content/uploads/que-visitar-en-barcelona-1.jpg",
         },
         {
           name: "Seville",
-          img: "https://images.unsplash.com/photo-1506808547685-e2ba962ded58?auto=format&fit=crop&w=800&q=80",
+          img: "https://www.travelersuniverse.com/wp-content/uploads/2025/04/seville_s_fascinating_historical_highlights.jpg",
         },
         {
           name: "Granada",
-          img: "https://images.unsplash.com/photo-1600172454284-9342d8cf0b70?auto=format&fit=crop&w=800&q=80",
+          img: "https://www.gokitetours.com/wp-content/uploads/2025/01/The-10-Best-Things-to-Do-in-Granada-Spain-.webp",
         },
       ],
     },
