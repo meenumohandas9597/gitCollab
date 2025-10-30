@@ -62,7 +62,7 @@ function Header() {
 
         <ul className="hidden md:flex gap-20 font-semibold text-[15px]">
           <Link to='/'><li className="text-[#4ed4d2] cursor-pointer">Home</li></Link>
-          <Link to='/'><li className="hover:text-[#4ed4d2] cursor-pointer">About</li></Link>
+          <Link to='/about'><li className="hover:text-[#4ed4d2] cursor-pointer">About</li></Link>
           <Link to='/destination'><li className="hover:text-[#4ed4d2] cursor-pointer">Destinations</li></Link>
           <Link to='/tour'><li className="hover:text-[#4ed4d2] cursor-pointer">Tours</li></Link>
           <Link to='/blog'><li className="hover:text-[#4ed4d2] cursor-pointer">Blog</li></Link>
