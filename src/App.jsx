@@ -33,8 +33,8 @@ import ToursDetail from './pages/ToursDetail'
 function App() {
   return (
     <>
-      <Header />
       <Routes>
+<<<<<<< HEAD
         <Route path='/' element={<Home />} />
          <Route path='/pages' element={<Pages />} />
          <Route path='/about' element={<About />} />
@@ -58,8 +58,30 @@ function App() {
         <Route path="/destinations" element={<DashboardDestinations />} />
         <Route path="/users" element={<DashboardUsers />} />
         <Route path="/bookings" element={<DashboardBookings />} />
+=======
+        <Route path="/" element={<><Header /><Home /><Footer /></>} />
+        <Route path="/about" element={<><Header /><About /><Footer /></>} />
+        <Route path="/destination" element={<><Header /><Destination /> <Footer /></>} />
+        <Route path="/gallery" element={<><Header /><Gallery /><Footer /></>} />
+        <Route path="/tour" element={<><Header /><Tours /><Footer /> </>} />
+        <Route path="/tours/:id" element={<><Header /> <ToursDetail /> <Footer /> </>} />
+        <Route path="/blog" element={<> <Header /> <Blog /> <Footer /> </>} />
+        <Route path="/destination/:id" element={<><Header /><DestinationDetail /> <Footer /> </>} />
+        <Route path="/shop" element={<> <Header /> <Shop /> <Footer /></>} />
+        <Route path="/contact" element={<><Header /> <Contact /> <Footer /> </>} />
+
+        <Route path="/login" element={<LoginRegister />} />
+
+        {/* ---------- ADMIN  ---------- */}
+        <Route path="/admin/dashboard" element={<AdminDashboard />}>
+          <Route path="overview" element={<DashboardOverview />} />
+          <Route path="destinations" element={<DashboardDestinations />} />
+          <Route path="users" element={<DashboardUsers />} />
+          <Route path="bookings" element={<DashboardBookings />} />
+        </Route>
+>>>>>>> 47da4fa10951609f0a206ed8d84fbdf6be5d1a2c
       </Routes>
-      <Footer />
+
 
 
     </>
