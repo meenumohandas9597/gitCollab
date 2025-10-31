@@ -24,38 +24,138 @@ const Tours = () => {
     {
       title: "Barcelona",
       img: "https://setsail.qodeinteractive.com/wp-content/uploads/2018/10/tour-featured-img-42.jpg",
-    },
-    {
-      title: "Active Winter",
-      img: "https://setsail.qodeinteractive.com/wp-content/uploads/2018/10/tour-featured-img-14.jpg",
-    },
-    {
-      title: "Snow Surfing",
-      img: "https://setsail.qodeinteractive.com/wp-content/uploads/2018/10/tour-featured-img-18.jpg",
-    },
-    {
-      title: "Kids Ski School",
-      img: "https://setsail.qodeinteractive.com/wp-content/uploads/2018/10/tour-featured-img-19.jpg",
-    },
-    {
-      title: "Beautiful Holland",
-      img: "https://setsail.qodeinteractive.com/wp-content/uploads/2018/10/tour-featured-img-51.jpg",
+      price: 840,
+      description:
+        "Explore the vibrant city of Barcelona, filled with culture, beaches, and breathtaking architecture.",
+      destination: "Spain",
+      departure: "Main Square, Old Town",
+      time: "Approximately 8.30AM",
+      returnTime: "Approximately 7.30PM",
+      dressCode: "Casual, comfortable and light",
+      gallery: [
+        "https://setsail.qodeinteractive.com/wp-content/uploads/2018/09/destionations-1-masonry-39.jpg",
+        "https://setsail.qodeinteractive.com/wp-content/uploads/2018/09/destionations-1-masonry-36.jpg",
+        "https://setsail.qodeinteractive.com/wp-content/uploads/2018/09/destionations-1-masonry-28.jpg",
+      ],
     },
     {
       title: "Madrid",
       img: "https://setsail.qodeinteractive.com/wp-content/uploads/2018/10/tour-featured-img-41.jpg",
+      price: 920,
+      description:
+        "Discover the charm of Madrid — art, cuisine, and unforgettable nightlife await you.",
+      destination: "Spain",
+      departure: "	Main Square, Old Town",
+      time: "Approximately 8.30AM",
+      returnTime: "Approximately 7.30PM",
+      dressCode: "Casual, comfortable and light",
+      gallery: [
+        "https://setsail.qodeinteractive.com/wp-content/uploads/2018/10/destionations-1-masonry-33.jpg",
+        "https://setsail.qodeinteractive.com/wp-content/uploads/2018/09/destionations-1-masonry-31.jpg",
+        "https://setsail.qodeinteractive.com/wp-content/uploads/2018/09/destionations-1-masonry-36.jpg",
+      ],
     },
     {
-      title: "Denpasar",
-      img: "https://setsail.qodeinteractive.com/wp-content/uploads/2018/10/tour-featured-img-48.jpg",
-    },
-    {
-      title: "Seminyak",
-      img: "https://setsail.qodeinteractive.com/wp-content/uploads/2018/10/tour-featured-img-47.jpg",
+      title: "Active Winter",
+      img: "https://setsail.qodeinteractive.com/wp-content/uploads/2018/10/tour-featured-img-46.jpg",
+      price: 780,
+      description:
+        "France offers diverse active winter experiences, from skiing and snowboarding in the French Alps and Pyrenees to more unique activities like dog sledding, ice climbing, and speedriding",
+      destination: "France",
+      departure: " Town Center",
+      time: "Approximately 10.00AM",
+      returnTime: "Approximately 6.00PM",
+      dressCode: "Light and tropical",
+      gallery: [
+        "https://setsail.qodeinteractive.com/wp-content/uploads/2018/09/destionations-1-masonry-35.jpg",
+        "https://setsail.qodeinteractive.com/wp-content/uploads/2018/09/destionations-1-masonry-37.jpg",
+        "https://setsail.qodeinteractive.com/wp-content/uploads/2018/09/destionations-1-masonry-38.jpg",
+      ],
     },
     {
       title: "Ubud",
       img: "https://setsail.qodeinteractive.com/wp-content/uploads/2018/10/tour-featured-img-46.jpg",
+      price: 780,
+      description:
+        "Immerse yourself in the lush jungles and tranquil rice terraces of Ubud.",
+      destination: "Bali, Indonesia",
+      departure: "Ubud Town Center",
+      time: "Approximately 10.00AM",
+      returnTime: "Approximately 6.00PM",
+      dressCode: "Light and tropical",
+      gallery: [
+        "https://setsail.qodeinteractive.com/wp-content/uploads/2018/09/destionations-1-masonry-35.jpg",
+        "https://setsail.qodeinteractive.com/wp-content/uploads/2018/09/destionations-1-masonry-37.jpg",
+        "https://setsail.qodeinteractive.com/wp-content/uploads/2018/09/destionations-1-masonry-38.jpg",
+      ],
+    },
+    {
+      title: "Ubud",
+      img: "https://setsail.qodeinteractive.com/wp-content/uploads/2018/10/tour-featured-img-46.jpg",
+      price: 780,
+      description:
+        "Immerse yourself in the lush jungles and tranquil rice terraces of Ubud.",
+      destination: "Bali, Indonesia",
+      departure: "Ubud Town Center",
+      time: "Approximately 10.00AM",
+      returnTime: "Approximately 6.00PM",
+      dressCode: "Light and tropical",
+      gallery: [
+        "https://setsail.qodeinteractive.com/wp-content/uploads/2018/09/destionations-1-masonry-35.jpg",
+        "https://setsail.qodeinteractive.com/wp-content/uploads/2018/09/destionations-1-masonry-37.jpg",
+        "https://setsail.qodeinteractive.com/wp-content/uploads/2018/09/destionations-1-masonry-38.jpg",
+      ],
+    },
+    {
+      title: "Ubud",
+      img: "https://setsail.qodeinteractive.com/wp-content/uploads/2018/10/tour-featured-img-46.jpg",
+      price: 780,
+      description:
+        "Immerse yourself in the lush jungles and tranquil rice terraces of Ubud.",
+      destination: "Bali, Indonesia",
+      departure: "Ubud Town Center",
+      time: "Approximately 10.00AM",
+      returnTime: "Approximately 6.00PM",
+      dressCode: "Light and tropical",
+      gallery: [
+        "https://setsail.qodeinteractive.com/wp-content/uploads/2018/09/destionations-1-masonry-35.jpg",
+        "https://setsail.qodeinteractive.com/wp-content/uploads/2018/09/destionations-1-masonry-37.jpg",
+        "https://setsail.qodeinteractive.com/wp-content/uploads/2018/09/destionations-1-masonry-38.jpg",
+      ],
+    },
+    {
+      title: "Ubud",
+      img: "https://setsail.qodeinteractive.com/wp-content/uploads/2018/10/tour-featured-img-46.jpg",
+      price: 780,
+      description:
+        "Immerse yourself in the lush jungles and tranquil rice terraces of Ubud.",
+      destination: "Bali, Indonesia",
+      departure: "Ubud Town Center",
+      time: "Approximately 10.00AM",
+      returnTime: "Approximately 6.00PM",
+      dressCode: "Light and tropical",
+      gallery: [
+        "https://setsail.qodeinteractive.com/wp-content/uploads/2018/09/destionations-1-masonry-35.jpg",
+        "https://setsail.qodeinteractive.com/wp-content/uploads/2018/09/destionations-1-masonry-37.jpg",
+        "https://setsail.qodeinteractive.com/wp-content/uploads/2018/09/destionations-1-masonry-38.jpg",
+      ],
+    },
+    {
+      title: "Ubud",
+      img: "https://setsail.qodeinteractive.com/wp-content/uploads/2018/10/tour-featured-img-46.jpg",
+      price: 780,
+      description:
+        "Immerse yourself in the lush jungles and tranquil rice terraces of Ubud.",
+      destination: "Bali, Indonesia",
+      departure: "Ubud Town Center",
+      time: "Approximately 10.00AM",
+      returnTime: "Approximately 6.00PM",
+      dressCode: "Light and tropical",
+      gallery: [
+        "https://setsail.qodeinteractive.com/wp-content/uploads/2018/09/destionations-1-masonry-35.jpg",
+        "https://setsail.qodeinteractive.com/wp-content/uploads/2018/09/destionations-1-masonry-37.jpg",
+        "https://setsail.qodeinteractive.com/wp-content/uploads/2018/09/destionations-1-masonry-38.jpg",
+      ],
     },
   ];
 
@@ -134,9 +234,8 @@ const Tours = () => {
                     Explore the most beautiful attractions in {tour.title}.
                   </Typography>
                   <Typography className="font-semibold mb-3 text-gray-700 text-[15px]">
-                    $1600 &nbsp;
-                    <FontAwesomeIcon icon={faStar} className="text-yellow-400" />{" "}
-                    6.7 &nbsp; Good
+                    ${tour.price} &nbsp;
+                    <FontAwesomeIcon icon={faStar} className="text-yellow-400" /> 6.7 &nbsp; Good
                   </Typography>
 
                   <Box className="flex gap-2 mt-3">
