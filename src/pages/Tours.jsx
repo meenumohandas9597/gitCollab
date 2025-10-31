@@ -57,7 +57,7 @@ const Tours = () => {
     },
     {
       title: "Active Winter",
-      img: "https://setsail.qodeinteractive.com/wp-content/uploads/2018/10/tour-featured-img-46.jpg",
+      img: "https://cdn-cms.bookingexperts.com/media/839/59/optimized.jpg",
       price: 780,
       description:
         "France offers diverse active winter experiences, from skiing and snowboarding in the French Alps and Pyrenees to more unique activities like dog sledding, ice climbing, and speedriding",
@@ -73,8 +73,8 @@ const Tours = () => {
       ],
     },
     {
-      title: "Ubud",
-      img: "https://setsail.qodeinteractive.com/wp-content/uploads/2018/10/tour-featured-img-46.jpg",
+      title: "Beautiful Holland",
+      img: "https://setsail.qodeinteractive.com/wp-content/uploads/2018/10/tour-featured-img-51-1100x650.jpg",
       price: 780,
       description:
         "Immerse yourself in the lush jungles and tranquil rice terraces of Ubud.",
@@ -90,8 +90,8 @@ const Tours = () => {
       ],
     },
     {
-      title: "Ubud",
-      img: "https://setsail.qodeinteractive.com/wp-content/uploads/2018/10/tour-featured-img-46.jpg",
+      title: "Denpasar",
+      img: "https://setsail.qodeinteractive.com/wp-content/uploads/2018/10/tour-featured-img-48-1100x650.jpg",
       price: 780,
       description:
         "Immerse yourself in the lush jungles and tranquil rice terraces of Ubud.",
@@ -107,8 +107,25 @@ const Tours = () => {
       ],
     },
     {
-      title: "Ubud",
-      img: "https://setsail.qodeinteractive.com/wp-content/uploads/2018/10/tour-featured-img-46.jpg",
+      title: "Temple Tour",
+      img: "https://setsail.qodeinteractive.com/wp-content/uploads/2018/10/tour-featured-img-52-1100x650.jpg",
+      price: 780,
+      description:
+        "Immerse yourself in the lush jungles and tranquil rice terraces of Ubud.",
+      destination: "Bali, Indonesia",
+      departure: "Ubud Town Center",
+      time: "Approximately 10.00AM",
+      returnTime: "Approximately 6.00PM",
+      dressCode: "Light and tropical",
+      gallery: [
+        "https://setsail.qodeinteractive.com/wp-content/uploads/2018/09/destionations-1-masonry-39-650x650.jpg",
+        "https://setsail.qodeinteractive.com/wp-content/uploads/2018/09/destionations-1-masonry-36-650x650.jpg",
+        "https://setsail.qodeinteractive.com/wp-content/uploads/2018/09/destionations-1-masonry-34-650x650.jpg",
+      ],
+    },
+    {
+      title: "Vatican City",
+      img: "https://setsail.qodeinteractive.com/wp-content/uploads/2018/10/tour-featured-img-1.jpg",
       price: 780,
       description:
         "Immerse yourself in the lush jungles and tranquil rice terraces of Ubud.",
@@ -124,29 +141,12 @@ const Tours = () => {
       ],
     },
     {
-      title: "Ubud",
-      img: "https://setsail.qodeinteractive.com/wp-content/uploads/2018/10/tour-featured-img-46.jpg",
+      title: "Milan",
+      img: "https://setsail.qodeinteractive.com/wp-content/uploads/2018/10/tour-featured-img-5.jpg",
       price: 780,
       description:
         "Immerse yourself in the lush jungles and tranquil rice terraces of Ubud.",
-      destination: "Bali, Indonesia",
-      departure: "Ubud Town Center",
-      time: "Approximately 10.00AM",
-      returnTime: "Approximately 6.00PM",
-      dressCode: "Light and tropical",
-      gallery: [
-        "https://setsail.qodeinteractive.com/wp-content/uploads/2018/09/destionations-1-masonry-35.jpg",
-        "https://setsail.qodeinteractive.com/wp-content/uploads/2018/09/destionations-1-masonry-37.jpg",
-        "https://setsail.qodeinteractive.com/wp-content/uploads/2018/09/destionations-1-masonry-38.jpg",
-      ],
-    },
-    {
-      title: "Ubud",
-      img: "https://setsail.qodeinteractive.com/wp-content/uploads/2018/10/tour-featured-img-46.jpg",
-      price: 780,
-      description:
-        "Immerse yourself in the lush jungles and tranquil rice terraces of Ubud.",
-      destination: "Bali, Indonesia",
+      destination: "	Italy",
       departure: "Ubud Town Center",
       time: "Approximately 10.00AM",
       returnTime: "Approximately 6.00PM",
