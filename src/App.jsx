@@ -22,9 +22,12 @@ import DashboardDestinations from './pages/admin/DashboardDestinations'
 import DashboardOverview from './pages/admin/DashboardOverview'
 import DashboardUsers from './pages/admin/DashboardUsers'
 import DashboardBookings from './pages/admin/DashboardBookings'
+
 import Offer from './pages/Offer'
 import Team from './pages/Team'
 import Faq from './pages/Faq'
+import ToursDetail from './pages/ToursDetail'
+
 
 
 function App() {
@@ -44,13 +47,14 @@ function App() {
         <Route path='/destination' element={<Destination />} />
         <Route path='/gallery' element={<Gallery />} />
         <Route path='/tour' element={<Tours />} />
+        <Route path="/tours/:title" element={<ToursDetail />} />
         <Route path='/login' element={<LoginRegister />} />
         <Route path='/blog' element={<Blog />} />
         <Route path="/destination/:id" element={<DestinationDetail />} />
         <Route path='/shop' element={<Shop />} />
         <Route path='/contact' element={<Contact />} />
         <Route path="/admin/dashboard" element={<AdminDashboard />} />
-        <Route path="/overview" element={<DashboardOverview />} /> 
+        <Route path="/overview" element={<DashboardOverview />} />
         <Route path="/destinations" element={<DashboardDestinations />} />
         <Route path="/users" element={<DashboardUsers />} />
         <Route path="/bookings" element={<DashboardBookings />} />
