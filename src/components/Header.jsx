@@ -5,7 +5,6 @@ import { faCartShopping } from "@fortawesome/free-solid-svg-icons/faCartShopping
 import { faFacebookF, faInstagram, faPinterestP, faTwitter } from "@fortawesome/free-brands-svg-icons";
 import { Link } from "react-router-dom";
 import LoginRegister from "./LoginRegister"; // 👈 import your modal
-import Pages from "../pages/Pages";
 
 function Header() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -63,7 +62,7 @@ function Header() {
 
         <ul className="hidden md:flex gap-20 font-semibold text-[15px]">
           <Link to='/'><li className="text-[#4ed4d2] cursor-pointer">Home</li></Link>
-           <Pages />
+          <Link to='/about'><li className="hover:text-[#4ed4d2] cursor-pointer">About</li></Link>
           <Link to='/destination'><li className="hover:text-[#4ed4d2] cursor-pointer">Destinations</li></Link>
           <Link to='/tour'><li className="hover:text-[#4ed4d2] cursor-pointer">Tours</li></Link>
           <Link to='/blog'><li className="hover:text-[#4ed4d2] cursor-pointer">Blog</li></Link>

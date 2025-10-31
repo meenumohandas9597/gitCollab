@@ -39,7 +39,7 @@ const Error = () => {
           variant="subtitle1"
           sx={{ letterSpacing: 2, fontSize: "2rem", mb: 1 }}
         >
-        take me home please
+        Take me home please
         </Typography>
         
 
