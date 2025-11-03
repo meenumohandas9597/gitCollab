@@ -1,9 +1,14 @@
 import React from "react";
+
 import { Button, Box, Typography, Grid, Container } from "@mui/material";
+
+import { Box, Typography, Grid, Container } from "@mui/material";
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faEnvelope,
   faLocationDot,
+
   faPhone
 } from "@fortawesome/free-solid-svg-icons";
 import { FaEnvelope, FaUser, FaCommentDots } from "react-icons/fa";
@@ -48,6 +53,7 @@ function Contact() {
           Get In Touch
         </Typography>
       </Box>
+
 
 
 
@@ -229,11 +235,10 @@ Let’s explore the world together!
           </form>
         </div>
       </section>
+
     </>
   );
 }
-
-
 
 
 export default Contact;

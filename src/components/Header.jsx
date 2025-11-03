@@ -5,7 +5,6 @@ import { faCartShopping } from "@fortawesome/free-solid-svg-icons/faCartShopping
 import { faFacebookF, faInstagram, faPinterestP, faTwitter } from "@fortawesome/free-brands-svg-icons";
 import { Link } from "react-router-dom";
 import LoginRegister from "./LoginRegister"; // 👈 import your modal
-import About from "../pages/About";
 
 function Header() {
   const [isModalOpen, setIsModalOpen] = useState(false);
