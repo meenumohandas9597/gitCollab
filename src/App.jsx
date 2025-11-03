@@ -27,7 +27,10 @@ import ToursDetail from './pages/ToursDetail'
 function App() {
   return (
     <>
+    <Header />
       <Routes>
+
+
         <Route path="/" element={<><Header /><Home /><Footer /></>} />
         <Route path="/about" element={<><Header /><About /><Footer /></>} />
         <Route path="/destination" element={<><Header /><Destination /> <Footer /></>} />
@@ -52,10 +55,13 @@ function App() {
           <Route path="users" element={<DashboardUsers />} />
           <Route path="bookings" element={<DashboardBookings />} />
         </Route>
+
+
+
       </Routes>
 
 
-
+<Footer />
     </>
 
 
