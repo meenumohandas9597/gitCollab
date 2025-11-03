@@ -313,7 +313,7 @@ function Home() {
       {/* video */}
 
       <div
-        className="relative w-full bg-cover bg-center py-32"
+        className="relative w-full bg-cover bg-center py-32 mt-20"
         style={{
           backgroundImage:
             "url('https://thumbs.wbm.im/pw/small/81f2cf06ad84e265142998786f466b98.jpg')",
@@ -361,16 +361,15 @@ function Home() {
       {/* reviews */}
 
       <div
-        className="relative w-full bg-cover bg-center py-32 overflow-hidden"
+        className="relative w-full bg-cover bg-center py-32 overflow-hidden mt-30"
         style={{
           backgroundImage:
             "url('https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=1600')",
         }}
       >
-        {/* Overlay */}
+        
         <div className="absolute inset-0 bg-black/50"></div>
-
-        {/* Content */}
+        
         <div className="relative z-10 flex flex-col items-center justify-center text-center text-white px-6">
           <p className="text-2xl italic mb-2" style={{ fontFamily: "Pacifico" }}>
             Read The Top
@@ -380,7 +379,6 @@ function Home() {
             Discover stories and experiences from travelers who explored breathtaking destinations around the world.
           </p>
 
-          {/* Reviews Wrapper */}
           <div className="overflow-hidden w-full max-w-7xl">
             <div className="flex w-[200%] animate-slide group-hover:pause-slide">
               {/* cards */}
@@ -524,6 +522,7 @@ function Home() {
         </div>
 
         {/* Animation */}
+
         <style>
           {`
       @keyframes slide {
@@ -615,21 +614,6 @@ function Home() {
 
         </div>
       </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     </>
 
