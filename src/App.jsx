@@ -27,7 +27,7 @@ import ToursDetail from './pages/ToursDetail'
 function App() {
   return (
     <>
-    <Header />
+   
       <Routes>
 
 
@@ -61,7 +61,7 @@ function App() {
       </Routes>
 
 
-<Footer />
+
     </>
 
 
