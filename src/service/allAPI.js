@@ -1,6 +1,7 @@
 import { commonAPI } from "./commonAPI";
 import { SERVER_URL } from "./serverURL";
 
+
 // get all destinations
 export const getAllDestinationsAPI = async () => {
   return await commonAPI("GET", `${SERVER_URL}/destinations`, "");
