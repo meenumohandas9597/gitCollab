@@ -1,5 +1,5 @@
 
-import { Route, Routes } from 'react-router-dom'
+import { Navigate, Route, Routes } from 'react-router-dom'
 import './App.css'
 import Header from './components/Header'
 import Home from './pages/Home'
@@ -29,7 +29,7 @@ import ProductDetail from './pages/ProductDetail'
 function App() {
   return (
     <>
-   
+
       <Routes>
 
 
@@ -45,7 +45,7 @@ function App() {
         <Route path="/contact" element={<><Header /> <Contact /> <Footer /> </>} />
         <Route path="/*" element={<Error />} />
 
-      <Route path="/cart" element={<><Header /><Cart /><Footer /></>} />
+        <Route path="/cart" element={<><Header /><Cart /><Footer /></>} />
         <Route path="/product/:id" element={<><Header /><ProductDetail /><Footer /></>} />
 
 
@@ -54,6 +54,7 @@ function App() {
 
         {/* ---------- ADMIN  ---------- */}
         <Route path="/admin/dashboard" element={<AdminDashboard />}>
+          <Route index element={<Navigate to="/admin/dashboard/overview" replace />} />
           <Route path="overview" element={<DashboardOverview />} />
           <Route path="destinations" element={<DashboardDestinations />} />
           <Route path="users" element={<DashboardUsers />} />
