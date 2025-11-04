@@ -71,7 +71,7 @@ function Header() {
         </ul>
 
         <div className="flex items-center gap-6 text-gray-700 text-2xl hover:text-teal-600">
-          <Link to={''}><FontAwesomeIcon icon={faCartShopping} /></Link>
+          <Link to={'/cart'}><FontAwesomeIcon icon={faCartShopping} /></Link>
         </div>
       </nav>
 

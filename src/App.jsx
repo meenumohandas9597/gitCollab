@@ -21,6 +21,8 @@ import DashboardUsers from './pages/admin/DashboardUsers'
 import DashboardBookings from './pages/admin/DashboardBookings'
 
 import ToursDetail from './pages/ToursDetail'
+import Cart from './pages/Cart'
+import ProductDetail from './pages/ProductDetail'
 
 
 
@@ -39,10 +41,12 @@ function App() {
         <Route path="/blog" element={<> <Header /> <Blog /> <Footer /> </>} />
         <Route path="/destination/:id" element={<><Header /><DestinationDetail /> <Footer /> </>} />
         <Route path="/shop" element={<> <Header /> <Shop /> <Footer /></>} />
+
         <Route path="/contact" element={<><Header /> <Contact /> <Footer /> </>} />
         <Route path="/*" element={<Error />} />
 
-
+      <Route path="/cart" element={<><Header /><Cart /><Footer /></>} />
+        <Route path="/product/:id" element={<><Header /><ProductDetail /><Footer /></>} />
 
 
 
