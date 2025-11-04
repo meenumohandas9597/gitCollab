@@ -21,6 +21,7 @@ import DashboardUsers from './pages/admin/DashboardUsers'
 import DashboardBookings from './pages/admin/DashboardBookings'
 
 import ToursDetail from './pages/ToursDetail'
+import BlogDetails from './pages/BlogDetails'
 
 
 
@@ -33,7 +34,17 @@ function App() {
         <Route path="/destination" element={<><Header /><Destination /> <Footer /></>} />
         <Route path="/tour" element={<><Header /><Tours /><Footer /> </>} />
         <Route path="/tours/:id" element={<><Header /> <ToursDetail /> <Footer /> </>} />
-        <Route path="/blog" element={<> <Header /> <Blog /> <Footer /> </>} />
+
+
+
+        {/* Blog Routes */}
+
+        <Route path="/blog" element={<><Header /><Blog /><Footer /></>} />
+        <Route path="/blog/:id" element={<><Header /><BlogDetails /><Footer /></>} />
+        <Route path="/blog/category/:name" element={<><Header /><BlogDetails /><Footer /></>} />
+
+
+
         <Route path="/destination/:id" element={<><Header /><DestinationDetail /> <Footer /> </>} />
         <Route path="/shop" element={<> <Header /> <Shop /> <Footer /></>} />
         <Route path="/contact" element={<><Header /> <Contact /> <Footer /> </>} />
