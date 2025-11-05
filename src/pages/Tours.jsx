@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Box,
   Typography,
@@ -20,6 +20,9 @@ import { useNavigate } from "react-router-dom";
 const Tours = () => {
   const navigate = useNavigate();
 
+  // --------------------------
+  // Base Tour Data
+  // --------------------------
   const tours = [
     {
       title: "Barcelona",
@@ -45,7 +48,7 @@ const Tours = () => {
       description:
         "Discover the charm of Madrid — art, cuisine, and unforgettable nightlife await you.",
       destination: "Spain",
-      departure: "	Main Square, Old Town",
+      departure: "Main Square, Old Town",
       time: "Approximately 8.30AM",
       returnTime: "Approximately 7.30PM",
       dressCode: "Casual, comfortable and light",
@@ -62,7 +65,7 @@ const Tours = () => {
       description:
         "France offers diverse active winter experiences, from skiing and snowboarding in the French Alps and Pyrenees to more unique activities like dog sledding, ice climbing, and speedriding",
       destination: "France",
-      departure: " Town Center",
+      departure: "Town Center",
       time: "Approximately 10.00AM",
       returnTime: "Approximately 6.00PM",
       dressCode: "Light and tropical",
@@ -75,14 +78,13 @@ const Tours = () => {
     {
       title: "Beautiful Holland",
       img: "https://setsail.qodeinteractive.com/wp-content/uploads/2018/10/tour-featured-img-51-1100x650.jpg",
-      price: 780,
-      description:
-        "Immerse yourself in the lush jungles and tranquil rice terraces of Ubud.",
-      destination: "Bali, Indonesia",
-      departure: "Ubud Town Center",
-      time: "Approximately 10.00AM",
+      price: 880,
+      description: "Immerse yourself in the colorful fields and canals of Holland.",
+      destination: "Netherlands",
+      departure: "City Center",
+      time: "Approximately 9.00AM",
       returnTime: "Approximately 6.00PM",
-      dressCode: "Light and tropical",
+      dressCode: "Casual",
       gallery: [
         "https://setsail.qodeinteractive.com/wp-content/uploads/2018/09/destionations-1-masonry-35.jpg",
         "https://setsail.qodeinteractive.com/wp-content/uploads/2018/09/destionations-1-masonry-37.jpg",
@@ -92,7 +94,7 @@ const Tours = () => {
     {
       title: "Denpasar",
       img: "https://setsail.qodeinteractive.com/wp-content/uploads/2018/10/tour-featured-img-48-1100x650.jpg",
-      price: 780,
+      price: 720,
       description:
         "Immerse yourself in the lush jungles and tranquil rice terraces of Ubud.",
       destination: "Bali, Indonesia",
@@ -109,14 +111,13 @@ const Tours = () => {
     {
       title: "Temple Tour",
       img: "https://setsail.qodeinteractive.com/wp-content/uploads/2018/10/tour-featured-img-52-1100x650.jpg",
-      price: 780,
-      description:
-        "Immerse yourself in the lush jungles and tranquil rice terraces of Ubud.",
-      destination: "Bali, Indonesia",
-      departure: "Ubud Town Center",
-      time: "Approximately 10.00AM",
-      returnTime: "Approximately 6.00PM",
-      dressCode: "Light and tropical",
+      price: 690,
+      description: "Experience the serenity of ancient temples and rich culture.",
+      destination: "Thailand",
+      departure: "Bangkok",
+      time: "Approximately 9.00AM",
+      returnTime: "Approximately 5.00PM",
+      dressCode: "Modest clothing",
       gallery: [
         "https://setsail.qodeinteractive.com/wp-content/uploads/2018/09/destionations-1-masonry-39-650x650.jpg",
         "https://setsail.qodeinteractive.com/wp-content/uploads/2018/09/destionations-1-masonry-36-650x650.jpg",
@@ -126,14 +127,13 @@ const Tours = () => {
     {
       title: "Vatican City",
       img: "https://setsail.qodeinteractive.com/wp-content/uploads/2018/10/tour-featured-img-1.jpg",
-      price: 780,
-      description:
-        "Immerse yourself in the lush jungles and tranquil rice terraces of Ubud.",
-      destination: "Bali, Indonesia",
-      departure: "Ubud Town Center",
-      time: "Approximately 10.00AM",
-      returnTime: "Approximately 6.00PM",
-      dressCode: "Light and tropical",
+      price: 950,
+      description: "Visit the spiritual heart of Rome — Vatican City awaits you.",
+      destination: "Italy",
+      departure: "Rome City Center",
+      time: "Approximately 8.00AM",
+      returnTime: "Approximately 5.00PM",
+      dressCode: "Modest clothing",
       gallery: [
         "https://setsail.qodeinteractive.com/wp-content/uploads/2018/09/destionations-1-masonry-35.jpg",
         "https://setsail.qodeinteractive.com/wp-content/uploads/2018/09/destionations-1-masonry-37.jpg",
@@ -143,14 +143,14 @@ const Tours = () => {
     {
       title: "Milan",
       img: "https://setsail.qodeinteractive.com/wp-content/uploads/2018/10/tour-featured-img-5.jpg",
-      price: 780,
+      price: 870,
       description:
-        "Immerse yourself in the lush jungles and tranquil rice terraces of Ubud.",
-      destination: "	Italy",
-      departure: "Ubud Town Center",
+        "Discover Milan’s fashion, food, and architecture — a city full of life and luxury.",
+      destination: "Italy",
+      departure: "City Square",
       time: "Approximately 10.00AM",
-      returnTime: "Approximately 6.00PM",
-      dressCode: "Light and tropical",
+      returnTime: "Approximately 7.00PM",
+      dressCode: "Trendy and light",
       gallery: [
         "https://setsail.qodeinteractive.com/wp-content/uploads/2018/09/destionations-1-masonry-35.jpg",
         "https://setsail.qodeinteractive.com/wp-content/uploads/2018/09/destionations-1-masonry-37.jpg",
@@ -159,6 +159,34 @@ const Tours = () => {
     },
   ];
 
+  // --------------------------
+  // States for Logic
+  // --------------------------
+  const [search, setSearch] = useState("");
+  const [priceRange, setPriceRange] = useState([450, 3600]);
+  const [sortType, setSortType] = useState("DATE");
+
+  // --------------------------
+  // Filter + Sort Logic
+  // --------------------------
+  const filteredTours = tours
+    .filter(
+      (tour) =>
+        tour.title.toLowerCase().includes(search.toLowerCase()) &&
+        tour.price >= priceRange[0] &&
+        tour.price <= priceRange[1]
+    )
+    .sort((a, b) => {
+      if (sortType === "PRICE LOW TO HIGH") return a.price - b.price;
+      if (sortType === "PRICE HIGH TO LOW") return b.price - a.price;
+      if (sortType === "NAME (A–Z)")
+        return a.title.localeCompare(b.title, "en", { sensitivity: "base" });
+      return 0; // DATE default (no actual sorting)
+    });
+
+  // --------------------------
+  // Component Layout
+  // --------------------------
   return (
     <div className="bg-white min-h-screen font-sans">
       {/* Hero Section */}
@@ -187,12 +215,14 @@ const Tours = () => {
               key={i}
               startIcon={i === 0 ? <FontAwesomeIcon icon={faCalendarAlt} /> : null}
               sx={{
-                color: "black",
+                color: sortType === label ? "#00bfa6" : "black",
                 fontWeight: 600,
-                borderBottom: i === 0 ? "2px solid black" : "none",
+                borderBottom:
+                  sortType === label ? "2px solid #00bfa6" : "2px solid transparent",
                 borderRadius: 0,
                 "&:hover": { color: "#00bfa6" },
               }}
+              onClick={() => setSortType(label)}
             >
               {label}
             </Button>
@@ -205,80 +235,87 @@ const Tours = () => {
         {/* Left: Tour Cards */}
         <Box className="md:col-span-2">
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
-            {tours.map((tour, i) => (
-              <Card
-                key={i}
-                onClick={() =>
-                  navigate(`/tours/${tour.title.toLowerCase()}`, { state: tour })
-                }
-                className="shadow-md rounded-2xl overflow-hidden border border-gray-100 hover:shadow-xl transition-all duration-500 cursor-pointer"
-              >
-                <div className="relative overflow-hidden group">
-                  <img
-                    src={tour.img}
-                    alt={tour.title}
-                    className="w-full h-64 object-cover transform transition-transform duration-[1200ms] ease-[cubic-bezier(0.23,1,0.32,1)] group-hover:scale-110"
-                  />
-                </div>
-                <CardContent className="p-6">
-                  <Typography
-                    variant="h5"
-                    className="font-bold mb-2 text-gray-800 tracking-wide"
-                  >
-                    {tour.title}
-                  </Typography>
-                  <Typography
-                    variant="body2"
-                    className="text-gray-600 mb-3 leading-relaxed"
-                  >
-                    Explore the most beautiful attractions in {tour.title}.
-                  </Typography>
-                  <Typography className="font-semibold mb-3 text-gray-700 text-[15px]">
-                    ${tour.price} &nbsp;
-                    <FontAwesomeIcon icon={faStar} className="text-yellow-400" /> 6.7 &nbsp; Good
-                  </Typography>
+            {filteredTours.length > 0 ? (
+              filteredTours.map((tour, i) => (
+                <Card
+                  key={i}
+                  onClick={() =>
+                    navigate(`/tours/${tour.title.toLowerCase()}`, { state: tour })
+                  }
+                  className="shadow-md rounded-2xl overflow-hidden border border-gray-100 hover:shadow-xl transition-all duration-500 cursor-pointer"
+                >
+                  <div className="relative overflow-hidden group">
+                    <img
+                      src={tour.img}
+                      alt={tour.title}
+                      className="w-full h-64 object-cover transform transition-transform duration-[1200ms] ease-[cubic-bezier(0.23,1,0.32,1)] group-hover:scale-110"
+                    />
+                  </div>
+                  <CardContent className="p-6">
+                    <Typography
+                      variant="h5"
+                      className="font-bold mb-2 text-gray-800 tracking-wide"
+                    >
+                      {tour.title}
+                    </Typography>
+                    <Typography
+                      variant="body2"
+                      className="text-gray-600 mb-3 leading-relaxed"
+                    >
+                      {tour.description}
+                    </Typography>
+                    <Typography className="font-semibold mb-3 text-gray-700 text-[15px]">
+                      ${tour.price} &nbsp;
+                      <FontAwesomeIcon icon={faStar} className="text-yellow-400" /> 6.7 &nbsp;
+                      Good
+                    </Typography>
 
-                  <Box className="flex gap-2 mt-3">
-                    <Button
-                      startIcon={<FontAwesomeIcon icon={faCalendarAlt} />}
-                      variant="contained"
-                      sx={{
-                        backgroundColor: "#00bfa5",
-                        "&:hover": { backgroundColor: "#009e8f" },
-                        borderRadius: "50px",
-                        textTransform: "none",
-                      }}
-                    >
-                      1
-                    </Button>
-                    <Button
-                      startIcon={<FontAwesomeIcon icon={faUser} />}
-                      variant="contained"
-                      sx={{
-                        backgroundColor: "#00bfa5",
-                        "&:hover": { backgroundColor: "#009e8f" },
-                        borderRadius: "50px",
-                        textTransform: "none",
-                      }}
-                    >
-                      13+
-                    </Button>
-                    <Button
-                      startIcon={<FontAwesomeIcon icon={faMapMarkerAlt} />}
-                      variant="contained"
-                      sx={{
-                        backgroundColor: "#00bfa5",
-                        "&:hover": { backgroundColor: "#009e8f" },
-                        borderRadius: "50px",
-                        textTransform: "none",
-                      }}
-                    >
-                      Skiing
-                    </Button>
-                  </Box>
-                </CardContent>
-              </Card>
-            ))}
+                    <Box className="flex gap-2 mt-3">
+                      <Button
+                        startIcon={<FontAwesomeIcon icon={faCalendarAlt} />}
+                        variant="contained"
+                        sx={{
+                          backgroundColor: "#00bfa5",
+                          "&:hover": { backgroundColor: "#009e8f" },
+                          borderRadius: "50px",
+                          textTransform: "none",
+                        }}
+                      >
+                        1
+                      </Button>
+                      <Button
+                        startIcon={<FontAwesomeIcon icon={faUser} />}
+                        variant="contained"
+                        sx={{
+                          backgroundColor: "#00bfa5",
+                          "&:hover": { backgroundColor: "#009e8f" },
+                          borderRadius: "50px",
+                          textTransform: "none",
+                        }}
+                      >
+                        13+
+                      </Button>
+                      <Button
+                        startIcon={<FontAwesomeIcon icon={faMapMarkerAlt} />}
+                        variant="contained"
+                        sx={{
+                          backgroundColor: "#00bfa5",
+                          "&:hover": { backgroundColor: "#009e8f" },
+                          borderRadius: "50px",
+                          textTransform: "none",
+                        }}
+                      >
+                        Skiing
+                      </Button>
+                    </Box>
+                  </CardContent>
+                </Card>
+              ))
+            ) : (
+              <Typography variant="h6" className="text-gray-500">
+                No tours found matching your filters.
+              </Typography>
+            )}
           </div>
         </Box>
 
@@ -293,48 +330,21 @@ const Tours = () => {
             </Typography>
 
             <Box className="flex flex-col gap-3 mb-6">
-              {["Search Tour", "Where To?", "Month"].map((placeholder, i) => (
-                <TextField
-                  key={i}
-                  fullWidth
-                  placeholder={placeholder}
-                  variant="filled"
-                  sx={{
-                    backgroundColor: "rgba(255,255,255,0.2)",
-                    borderRadius: "6px",
-                    input: { color: "white" },
-                  }}
-                />
-              ))}
+              <TextField
+                fullWidth
+                placeholder="Search Tour"
+                variant="filled"
+                value={search}
+                onChange={(e) => setSearch(e.target.value)}
+                sx={{
+                  backgroundColor: "rgba(255,255,255,0.2)",
+                  borderRadius: "6px",
+                  input: { color: "white" },
+                }}
+              />
+            
             </Box>
 
-            <Typography variant="h6" className="font-semibold mb-3">
-              Filter by price
-            </Typography>
-            <Slider value={[450, 3600]} min={450} max={3600} sx={{ color: "white" }} />
-            <Typography className="mb-6">Price: $450 - $3600</Typography>
-
-            <Box className="flex flex-col gap-2 text-white mb-6">
-              {["Popular", "Europe", "Wines", "Trendy"].map((item, i) => (
-                <label key={i} className="flex items-center">
-                  <input type="radio" name="filter" className="mr-2 accent-white" />
-                  {item}
-                </label>
-              ))}
-            </Box>
-
-            <Button
-              variant="contained"
-              sx={{
-                backgroundColor: "#fff",
-                color: "#00bfa5",
-                fontWeight: "bold",
-                width: "100%",
-                "&:hover": { backgroundColor: "#f2f2f2" },
-              }}
-            >
-              SEARCH
-            </Button>
           </Box>
 
           <img

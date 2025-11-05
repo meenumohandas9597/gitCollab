@@ -1,5 +1,5 @@
 
-import { Route, Routes } from 'react-router-dom'
+import { Navigate, Route, Routes } from 'react-router-dom'
 import './App.css'
 import Header from './components/Header'
 import Home from './pages/Home'
@@ -21,14 +21,18 @@ import DashboardUsers from './pages/admin/DashboardUsers'
 import DashboardBookings from './pages/admin/DashboardBookings'
 
 import ToursDetail from './pages/ToursDetail'
-import BlogDetails from './pages/BlogDetails'
+import Cart from './pages/Cart'
+import ProductDetail from './pages/ProductDetail'
 
 
 
 function App() {
   return (
     <>
+
       <Routes>
+
+
         <Route path="/" element={<><Header /><Home /><Footer /></>} />
         <Route path="/about" element={<><Header /><About /><Footer /></>} />
         <Route path="/destination" element={<><Header /><Destination /> <Footer /></>} />
@@ -47,10 +51,12 @@ function App() {
 
         <Route path="/destination/:id" element={<><Header /><DestinationDetail /> <Footer /> </>} />
         <Route path="/shop" element={<> <Header /> <Shop /> <Footer /></>} />
+
         <Route path="/contact" element={<><Header /> <Contact /> <Footer /> </>} />
         <Route path="/*" element={<Error />} />
 
-
+        <Route path="/cart" element={<><Header /><Cart /><Footer /></>} />
+        <Route path="/product/:id" element={<><Header /><ProductDetail /><Footer /></>} />
 
 
 
@@ -58,11 +64,15 @@ function App() {
 
         {/* ---------- ADMIN  ---------- */}
         <Route path="/admin/dashboard" element={<AdminDashboard />}>
+          <Route index element={<Navigate to="/admin/dashboard/overview" replace />} />
           <Route path="overview" element={<DashboardOverview />} />
           <Route path="destinations" element={<DashboardDestinations />} />
           <Route path="users" element={<DashboardUsers />} />
           <Route path="bookings" element={<DashboardBookings />} />
         </Route>
+
+
+
       </Routes>
 
 

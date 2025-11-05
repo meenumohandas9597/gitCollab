@@ -1,11 +1,20 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { getAllUsersAPI } from "../../service/allAPI";
 
 function DashboardUsers() {
-  const users = [
-    { name: "John Doe", email: "john@gmail.com", role: "Traveler" },
-    { name: "Emily Carter", email: "emily@yahoo.com", role: "Traveler" },
-    { name: "Michael Lee", email: "michael@hotmail.com", role: "Traveler" },
-  ];
+  const [users, setUsers] = useState([]);
+
+  useEffect(() => {
+    const fetchUsers = async () => {
+      try {
+        const result = await getAllUsersAPI();
+        setUsers(result.data || []);
+      } catch (error) {
+        console.error("Error fetching users:", error);
+      }
+    };
+    fetchUsers();
+  }, []);
 
   return (
     <div>
@@ -16,17 +25,23 @@ function DashboardUsers() {
           <tr>
             <th className="p-3 text-left">Name</th>
             <th className="p-3 text-left">Email</th>
-            <th className="p-3 text-left">Role</th>
           </tr>
         </thead>
         <tbody>
-          {users.map((u, i) => (
-            <tr key={i} className="border-b hover:bg-gray-50 transition">
-              <td className="p-3">{u.name}</td>
-              <td className="p-3">{u.email}</td>
-              <td className="p-3">{u.role}</td>
+          {users.length > 0 ? (
+            users.map((u, i) => (
+              <tr key={i} className="border-b hover:bg-gray-50 transition">
+                <td className="p-3">{u.name}</td>
+                <td className="p-3">{u.email}</td>
+              </tr>
+            ))
+          ) : (
+            <tr>
+              <td colSpan="2" className="p-3 text-center text-gray-500">
+                No users found
+              </td>
             </tr>
-          ))}
+          )}
         </tbody>
       </table>
     </div>
