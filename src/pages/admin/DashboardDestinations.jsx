@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
-import Swal from "sweetalert2";
 import {
   getAllDestinationsAPI,
   addDestinationAPI,
   deleteDestinationAPI,
   editDestinationAPI,
 } from "../../service/allAPI";
+import Swal from "sweetalert2";
 
 const DashboardDestinations = () => {
   const [destinations, setDestinations] = useState([]);

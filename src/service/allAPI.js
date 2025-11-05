@@ -28,8 +28,12 @@ export const addUserAPI = async (userData) => {
 };
 
 // ====================== BOOKINGS ======================
-export const getAllBookingsAPI = async () => {
-  return await commonAPI("GET", `${SERVER_URL}/bookings`, "");
+export const getAllBookingsAPI = () => {
+  return commonAPI("GET", `${SERVER_URL}/bookings`);
+};
+
+export const addBookingAPI = (booking) => {
+  return commonAPI("POST", `${SERVER_URL}/bookings`, booking);
 };
 
 // ====================== OVERVIEW ======================

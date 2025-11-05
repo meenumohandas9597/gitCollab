@@ -16,13 +16,16 @@ import ToursPlan from "./ToursPlan";
 import ToursLocation from "./Tourslocation";
 import ToursReview from "./ToursReview";
 import ToursGallery from "./ToursGallery";
+import { addBookingAPI } from "../service/allAPI";
+import Swal from "sweetalert2";
+
+// API
 
 const ToursDetail = () => {
   const location = useLocation();
   const [tour, setTour] = useState(location.state);
   const [activeTab, setActiveTab] = useState("information");
 
-  // ✅ Booking form logic
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -33,76 +36,7 @@ const ToursDetail = () => {
     message: "",
   });
 
-  const handleInputChange = (e) => {
-    const { placeholder, value } = e.target;
-
-    // Match placeholders with state keys
-    const map = {
-      "Name *": "name",
-      "Email *": "email",
-      "Confirm Email *": "confirmEmail",
-      "Phone": "phone",
-      "dd-mm-yy *": "date",
-      "Number of ticket": "tickets",
-      "Message": "message",
-    };
-
-    const key = map[placeholder];
-    if (key) {
-      setFormData((prev) => ({ ...prev, [key]: value }));
-    }
-  };
-
-  const handleBooking = (e) => {
-    e.preventDefault();
-
-    // ✅ Validation logic
-    if (!formData.name || !formData.email || !formData.confirmEmail || !formData.date) {
-      alert("⚠️ Please fill all required fields (Name, Email, Confirm Email, Date).");
-      return;
-    }
-
-    // Email match validation
-    if (formData.email !== formData.confirmEmail) {
-      alert("⚠️ Email and Confirm Email do not match.");
-      return;
-    }
-
-    // Phone validation (optional but recommended)
-    if (formData.phone && !/^[0-9]{10}$/.test(formData.phone)) {
-      alert("⚠️ Please enter a valid 10-digit phone number.");
-      return;
-    }
-
-    // Date format validation
-    if (!/^\d{2}-\d{2}-\d{2}$/.test(formData.date)) {
-      alert("⚠️ Please enter a valid date in dd-mm-yy format.");
-      return;
-    }
-
-    // Ticket count validation
-    if (formData.tickets && isNaN(formData.tickets)) {
-      alert("⚠️ Number of tickets must be a number.");
-      return;
-    }
-
-    // ✅ Success message
-    alert(`✅ Booking confirmed for ${formData.name}! Thank you for choosing ${tour.title}.`);
-    console.log("Booking Details:", formData);
-
-    // ✅ Reset form after successful booking
-    setFormData({
-      name: "",
-      email: "",
-      confirmEmail: "",
-      phone: "",
-      date: "",
-      tickets: "",
-      message: "",
-    });
-  };
-
-  // ✅ Persist tour data on refresh
+  // Persist tour selection
   useEffect(() => {
     if (location.state) {
       localStorage.setItem("selectedTour", JSON.stringify(location.state));
@@ -122,9 +56,82 @@ const ToursDetail = () => {
     );
   }
 
+  const today = new Date().toISOString().split("T")[0];
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const handleBooking = async (e) => {
+
+    // Validation
+    if (!formData.name || !formData.email || !formData.confirmEmail || !formData.date) {
+      alert("⚠️ Please fill all required fields (Name, Email, Confirm Email, Date).");
+      return;
+    }
+
+    if (formData.email !== formData.confirmEmail) {
+      alert("⚠️ Email and Confirm Email do not match.");
+      return;
+    }
+
+    if (formData.phone && !/^[0-9]{10}$/.test(formData.phone)) {
+      alert("⚠️ Please enter a valid 10-digit phone number.");
+      return;
+    }
+
+    if (formData.tickets && isNaN(formData.tickets)) {
+      alert("⚠️ Number of tickets must be a number.");
+      return;
+    }
+
+    // Format date
+    const [year, month, day] = formData.date.split("-");
+    const formattedDate = `${day}-${month}-${year.slice(-2)}`;
+
+    // Booking object
+    const bookingData = {
+      customer: formData.name,
+      email: formData.email,
+      phone: formData.phone,
+      date: formattedDate,
+      tickets: formData.tickets,
+      message: formData.message,
+      destination: tour.title,
+    };
+
+    try {
+      const response = await addBookingAPI(bookingData);
+      console.log("Booking saved:", response);
+      Swal.fire({
+        title: "Good job!",
+        text: ` Booking confirmed for ${formData.name} on ${formattedDate}`,
+        icon: "success"
+      });
+
+      setFormData({
+        name: "",
+        email: "",
+        confirmEmail: "",
+        phone: "",
+        date: "",
+        tickets: "",
+        message: "",
+      });
+    } catch (err) {
+      console.error("Booking failed:", err);
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "Failed to book the tour.Please try again. ",
+      });
+    }
+  };
+
   return (
     <Box sx={{ bgcolor: "#fff", minHeight: "100vh" }}>
-      {/* -------- HERO SECTION -------- */}
+      {/* HERO SECTION */}
       <Box
         sx={{
           position: "relative",
@@ -180,7 +187,7 @@ const ToursDetail = () => {
         </Box>
       </Box>
 
-      {/* -------- TABS SECTION -------- */}
+      {/* TABS SECTION */}
       <Box className="flex flex-wrap justify-center items-center gap-8 py-6 bg-white shadow-lg -mt-12 mx-6 md:mx-16 rounded-2xl z-10 relative">
         {[
           { label: "INFORMATION", icon: faInfoCircle, id: "information" },
@@ -196,10 +203,7 @@ const ToursDetail = () => {
             sx={{
               color: activeTab === tab.id ? "#00bfa6" : "black",
               fontWeight: 600,
-              borderBottom:
-                activeTab === tab.id
-                  ? "2px solid #00bfa6"
-                  : "2px solid transparent",
+              borderBottom: activeTab === tab.id ? "2px solid #00bfa6" : "2px solid transparent",
               borderRadius: 0,
               "&:hover": { color: "#00bfa6" },
             }}
@@ -209,26 +213,19 @@ const ToursDetail = () => {
         ))}
       </Box>
 
-      {/* -------- MAIN LAYOUT -------- */}
+      {/* MAIN LAYOUT */}
       <Box className="grid grid-cols-1 md:grid-cols-3 gap-10 px-8 md:px-20 py-16">
-        {/* -------- LEFT PANEL -------- */}
+        {/* LEFT PANEL */}
         <Box className="md:col-span-2">
           {activeTab === "information" && (
             <>
               <Typography variant="h4" sx={{ fontWeight: 700, mb: 1 }}>
                 {tour.title}
               </Typography>
-
-              <Typography
-                variant="h6"
-                sx={{ color: "#00bfa6", fontWeight: 600, display: "inline" }}
-              >
+              <Typography variant="h6" sx={{ color: "#00bfa6", fontWeight: 600, display: "inline" }}>
                 ${tour.price}
               </Typography>
-              <Typography
-                variant="body1"
-                sx={{ display: "inline", ml: 1, color: "#555" }}
-              >
+              <Typography variant="body1" sx={{ display: "inline", ml: 1, color: "#555" }}>
                 / per person
               </Typography>
 
@@ -245,43 +242,30 @@ const ToursDetail = () => {
                 </Typography>
               </Box>
 
-              <Typography
-                variant="body1"
-                sx={{ color: "#555", lineHeight: 1.8, mb: 3 }}
-              >
+              <Typography variant="body1" sx={{ color: "#555", lineHeight: 1.8, mb: 3 }}>
                 {tour.description}
               </Typography>
 
               <Box className="grid grid-cols-2 gap-6 mb-10">
                 <Box>
                   <Typography sx={{ fontWeight: 600 }}>Destination</Typography>
-                  <Typography sx={{ color: "#555" }}>
-                    {tour.destination}
-                  </Typography>
+                  <Typography sx={{ color: "#555" }}>{tour.destination}</Typography>
                 </Box>
                 <Box>
                   <Typography sx={{ fontWeight: 600 }}>Departure</Typography>
-                  <Typography sx={{ color: "#555" }}>
-                    {tour.departure}
-                  </Typography>
+                  <Typography sx={{ color: "#555" }}>{tour.departure}</Typography>
                 </Box>
                 <Box>
-                  <Typography sx={{ fontWeight: 600 }}>
-                    Departure Time
-                  </Typography>
+                  <Typography sx={{ fontWeight: 600 }}>Departure Time</Typography>
                   <Typography sx={{ color: "#555" }}>{tour.time}</Typography>
                 </Box>
                 <Box>
                   <Typography sx={{ fontWeight: 600 }}>Return Time</Typography>
-                  <Typography sx={{ color: "#555" }}>
-                    {tour.returnTime}
-                  </Typography>
+                  <Typography sx={{ color: "#555" }}>{tour.returnTime}</Typography>
                 </Box>
                 <Box>
                   <Typography sx={{ fontWeight: 600 }}>Dress Code</Typography>
-                  <Typography sx={{ color: "#555" }}>
-                    {tour.dressCode}
-                  </Typography>
+                  <Typography sx={{ color: "#555" }}>{tour.dressCode}</Typography>
                 </Box>
               </Box>
             </>
@@ -293,7 +277,7 @@ const ToursDetail = () => {
           {activeTab === "reviews" && <ToursReview />}
         </Box>
 
-        {/* -------- RIGHT PANEL (Booking Form) -------- */}
+        {/* RIGHT PANEL (Booking Form) */}
         <Box
           sx={{
             bgcolor: "#2ec4b6",
@@ -314,42 +298,49 @@ const ToursDetail = () => {
           </Typography>
 
           {[
-            "Name *",
-            "Email *",
-            "Confirm Email *",
-            "Phone",
-            "dd-mm-yy *",
-            "Number of ticket",
-            "Message",
-          ].map((label, i) => (
+            { label: "Name *", name: "name" },
+            { label: "Email *", name: "email" },
+            { label: "Confirm Email *", name: "confirmEmail" },
+            { label: "Phone", name: "phone" },
+            { label: "Number of ticket", name: "tickets" },
+            { label: "Message", name: "message" },
+          ].map(({ label, name }, i) => (
             <TextField
               key={i}
+              name={name}
               placeholder={label}
               variant="outlined"
               fullWidth
-              value={
-                {
-                  "Name *": formData.name,
-                  "Email *": formData.email,
-                  "Confirm Email *": formData.confirmEmail,
-                  "Phone": formData.phone,
-                  "dd-mm-yy *": formData.date,
-                  "Number of ticket": formData.tickets,
-                  "Message": formData.message,
-                }[label]
-              }
+              value={formData[name]}
               onChange={handleInputChange}
               sx={{
                 bgcolor: "#3ddad7",
                 mb: 2,
                 borderRadius: 1,
-                "& .MuiOutlinedInput-root": {
-                  "& fieldset": { border: "none" },
-                },
+                "& .MuiOutlinedInput-root": { "& fieldset": { border: "none" } },
                 input: { color: "#fff" },
               }}
             />
           ))}
+
+          <TextField
+            name="date"
+            type="date"
+            label="Select Date *"
+            InputLabelProps={{ shrink: true }}
+            inputProps={{ min: today }}
+            variant="outlined"
+            fullWidth
+            value={formData.date}
+            onChange={handleInputChange}
+            sx={{
+              bgcolor: "#3ddad7",
+              mb: 2,
+              borderRadius: 1,
+              "& .MuiOutlinedInput-root": { "& fieldset": { border: "none" } },
+              input: { color: "#fff" },
+            }}
+          />
 
           <Button
             type="submit"
