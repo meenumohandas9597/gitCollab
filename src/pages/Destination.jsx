@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import { SERVER_URL } from "../service/serverURL";
 
 const Destination = () => {
   const [destinations, setDestinations] = useState([]);
 
   useEffect(() => {
     axios
-      .get("http://localhost:3000/destinations")
+      .get(`${SERVER_URL}/destinations`)
       .then((res) => setDestinations(res.data))
       .catch((err) => console.error("Error fetching destinations:", err));
   }, []);
