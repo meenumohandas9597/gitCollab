@@ -22,7 +22,7 @@ const ToursDetail = () => {
   const [tour, setTour] = useState(location.state);
   const [activeTab, setActiveTab] = useState("information");
 
-  // Form logic
+  // ✅ Booking form logic
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -35,20 +35,74 @@ const ToursDetail = () => {
 
   const handleInputChange = (e) => {
     const { placeholder, value } = e.target;
-    setFormData((prev) => ({ ...prev, [placeholder]: value }));
+
+    // Match placeholders with state keys
+    const map = {
+      "Name *": "name",
+      "Email *": "email",
+      "Confirm Email *": "confirmEmail",
+      "Phone": "phone",
+      "dd-mm-yy *": "date",
+      "Number of ticket": "tickets",
+      "Message": "message",
+    };
+
+    const key = map[placeholder];
+    if (key) {
+      setFormData((prev) => ({ ...prev, [key]: value }));
+    }
   };
 
   const handleBooking = (e) => {
     e.preventDefault();
-    if (!formData["Name *"] || !formData["Email *"]) {
-      alert("Please fill all required fields!");
+
+    // ✅ Validation logic
+    if (!formData.name || !formData.email || !formData.confirmEmail || !formData.date) {
+      alert("⚠️ Please fill all required fields (Name, Email, Confirm Email, Date).");
       return;
     }
-    alert(`✅ Booking confirmed for ${formData["Name *"]}!`);
+
+    // Email match validation
+    if (formData.email !== formData.confirmEmail) {
+      alert("⚠️ Email and Confirm Email do not match.");
+      return;
+    }
+
+    // Phone validation (optional but recommended)
+    if (formData.phone && !/^[0-9]{10}$/.test(formData.phone)) {
+      alert("⚠️ Please enter a valid 10-digit phone number.");
+      return;
+    }
+
+    // Date format validation
+    if (!/^\d{2}-\d{2}-\d{2}$/.test(formData.date)) {
+      alert("⚠️ Please enter a valid date in dd-mm-yy format.");
+      return;
+    }
+
+    // Ticket count validation
+    if (formData.tickets && isNaN(formData.tickets)) {
+      alert("⚠️ Number of tickets must be a number.");
+      return;
+    }
+
+    // ✅ Success message
+    alert(`✅ Booking confirmed for ${formData.name}! Thank you for choosing ${tour.title}.`);
     console.log("Booking Details:", formData);
+
+    // ✅ Reset form after successful booking
+    setFormData({
+      name: "",
+      email: "",
+      confirmEmail: "",
+      phone: "",
+      date: "",
+      tickets: "",
+      message: "",
+    });
   };
 
-  // Persist tour data on refresh
+  // ✅ Persist tour data on refresh
   useEffect(() => {
     if (location.state) {
       localStorage.setItem("selectedTour", JSON.stringify(location.state));
@@ -273,7 +327,17 @@ const ToursDetail = () => {
               placeholder={label}
               variant="outlined"
               fullWidth
-              value={formData[label] || ""}
+              value={
+                {
+                  "Name *": formData.name,
+                  "Email *": formData.email,
+                  "Confirm Email *": formData.confirmEmail,
+                  "Phone": formData.phone,
+                  "dd-mm-yy *": formData.date,
+                  "Number of ticket": formData.tickets,
+                  "Message": formData.message,
+                }[label]
+              }
               onChange={handleInputChange}
               sx={{
                 bgcolor: "#3ddad7",
