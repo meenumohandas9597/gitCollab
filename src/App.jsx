@@ -5,7 +5,7 @@ import Header from './components/Header'
 import Home from './pages/Home'
 import Error from './pages/Error'
 import About from './pages/About'
-
+import BlogDetails from "./pages/BlogDetails"
 import Footer from './components/Footer'
 import Destination from './pages/Destination'
 import Tours from './pages/Tours'
