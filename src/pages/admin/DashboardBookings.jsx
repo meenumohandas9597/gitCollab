@@ -1,15 +1,28 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { getAllBookingsAPI } from "../../service/allAPI";
 
-function DashboardBookings() {
-  const bookings = [
-    { id: 101, customer: "John Doe", destination: "Greece", date: "2025-10-20", status: "Confirmed" },
-    { id: 102, customer: "Emily Carter", destination: "Spain", date: "2025-11-02", status: "Pending" },
-    { id: 103, customer: "Michael Lee", destination: "Taiwan", date: "2025-11-15", status: "Cancelled" },
-  ];
+const DashboardBookings = () => {
+  const [bookings, setBookings] = useState([]);
+
+  useEffect(() => {
+    const fetchBookings = async () => {
+      try {
+        const result = await getAllBookingsAPI();
+        if (result.status === 200) {
+          setBookings(result.data);
+        } else {
+          console.error("Failed to fetch bookings, status:", result.status);
+        }
+      } catch (err) {
+        console.error("API Error:", err);
+      }
+    };
+    fetchBookings();
+  }, []);
 
   return (
-    <div>
-      <h1 className="text-2xl font-bold mb-6 text-gray-800">Manage Bookings</h1>
+    <div className="p-6">
+      <h1 className="text-2xl font-bold mb-6 text-gray-800"> Bookings</h1>
 
       <table className="w-full bg-white rounded-xl shadow overflow-hidden">
         <thead className="bg-teal-600 text-white">
@@ -18,30 +31,33 @@ function DashboardBookings() {
             <th className="p-3 text-left">Customer</th>
             <th className="p-3 text-left">Destination</th>
             <th className="p-3 text-left">Date</th>
-            <th className="p-3 text-left">Status</th>
+            <th className="p-3 text-left">Tickets</th>
+            <th className="p-3 text-left">Phone</th>
           </tr>
         </thead>
         <tbody>
-          {bookings.map((b) => (
-            <tr key={b.id} className="border-b hover:bg-gray-50 transition">
-              <td className="p-3">{b.id}</td>
-              <td className="p-3">{b.customer}</td>
-              <td className="p-3">{b.destination}</td>
-              <td className="p-3">{b.date}</td>
-              <td className={`p-3 font-semibold ${b.status === "Confirmed"
-                ? "text-green-600"
-                : b.status === "Pending"
-                ? "text-yellow-600"
-                : "text-red-600"
-                }`}>
-                {b.status}
+          {bookings.length ? (
+            bookings.map((b) => (
+              <tr key={b.id} className="border-b hover:bg-gray-50 transition">
+                <td className="p-3">{b.id}</td>
+                <td className="p-3">{b.customer}</td>
+                <td className="p-3">{b.destination}</td>
+                <td className="p-3">{b.date}</td>
+                <td className="p-3">{b.tickets}</td>
+                <td className="p-3">{b.phone}</td>
+              </tr>
+            ))
+          ) : (
+            <tr>
+              <td colSpan="7" className="p-3 text-center text-gray-500">
+                No bookings found.
               </td>
             </tr>
-          ))}
+          )}
         </tbody>
       </table>
     </div>
   );
-}
+};
 
 export default DashboardBookings;
