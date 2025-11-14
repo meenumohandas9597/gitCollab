@@ -15,7 +15,7 @@ export const editDestinationAPI = async (id, updatedData) => {
 };
 
 export const deleteDestinationAPI = async (id) => {
-  return await commonAPI("DELETE", `${SERVER_URL}/destinations/${id}`, {});
+  return await commonAPI("DELETE", `${SERVER_URL}/destinations/${id}`);
 };
 
 // ====================== USERS ======================
@@ -34,6 +34,17 @@ export const getAllBookingsAPI = () => {
 
 export const addBookingAPI = (booking) => {
   return commonAPI("POST", `${SERVER_URL}/bookings`, booking);
+};
+
+// UPDATE BOOKING STATUS (PATCH)
+export const updateBookingStatusAPI = (id, statusObj) => {
+  // statusObj must be: { status: "Approved" } or { status: "Rejected" }
+  return commonAPI("PATCH", `${SERVER_URL}/bookings/${id}`, statusObj);
+};
+
+// DELETE BOOKING
+export const deleteBookingAPI = (id) => {
+  return commonAPI("DELETE", `${SERVER_URL}/bookings/${id}`);
 };
 
 // ====================== OVERVIEW ======================

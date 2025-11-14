@@ -1,28 +1,11 @@
 import React, { useState } from "react";
-import {
-  Box,
-  Typography,
-  Button,
-  Slider,
-  TextField,
-  Card,
-  CardContent,
-} from "@mui/material";
+import { Box, Typography, Button, Slider, TextField, Card, CardContent, } from "@mui/material";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faCalendarAlt,
-  faUser,
-  faMapMarkerAlt,
-  faStar,
-} from "@fortawesome/free-solid-svg-icons";
+import { faCalendarAlt, faUser, faMapMarkerAlt, faStar, } from "@fortawesome/free-solid-svg-icons";
 import { useNavigate } from "react-router-dom";
 
 const Tours = () => {
   const navigate = useNavigate();
-
-  // --------------------------
-  // Base Tour Data
-  // --------------------------
   const tours = [
     {
       title: "Barcelona",
@@ -159,16 +142,10 @@ const Tours = () => {
     },
   ];
 
-  // --------------------------
-  // States for Logic
-  // --------------------------
   const [search, setSearch] = useState("");
   const [priceRange, setPriceRange] = useState([450, 3600]);
   const [sortType, setSortType] = useState("DATE");
 
-  // --------------------------
-  // Filter + Sort Logic
-  // --------------------------
   const filteredTours = tours
     .filter(
       (tour) =>
@@ -181,75 +158,34 @@ const Tours = () => {
       if (sortType === "PRICE HIGH TO LOW") return b.price - a.price;
       if (sortType === "NAME (A–Z)")
         return a.title.localeCompare(b.title, "en", { sensitivity: "base" });
-      return 0; // DATE default (no actual sorting)
+      return 0;
     });
 
-  // --------------------------
-  // Component Layout
-  // --------------------------
   return (
     <div className="bg-white min-h-screen font-sans">
-      {/* Hero Section */}
-      <Box
-        className="relative h-[60vh] bg-cover bg-center flex items-center justify-center"
-        sx={{
-          backgroundImage:
-            "url('https://setsail.qodeinteractive.com/wp-content/uploads/2018/09/tour-list-title-img.jpg')",
-        }}
-      >
+      <Box className="relative h-[60vh] bg-cover bg-center flex items-center justify-center" sx={{ backgroundImage: "url('https://setsail.qodeinteractive.com/wp-content/uploads/2018/09/tour-list-title-img.jpg')", }}>
         <Box className="absolute inset-0 bg-black/30" />
-        <Typography
-          variant="h2"
-          className="relative text-white font-bold text-center"
-          sx={{ fontSize: { xs: "2.5rem", md: "3.5rem" } }}
-        >
+        <Typography variant="h2" className="relative text-white font-bold text-center" sx={{ fontSize: { xs: "2.5rem", md: "3.5rem" } }} >
           Tours Search Page
         </Typography>
       </Box>
 
-      {/* Sorting Bar */}
       <Box className="flex flex-wrap justify-center items-center gap-8 py-6 bg-white shadow-lg -mt-12 mx-6 md:mx-16 rounded-2xl z-10 relative">
         {["DATE", "PRICE LOW TO HIGH", "PRICE HIGH TO LOW", "NAME (A–Z)"].map(
           (label, i) => (
-            <Button
-              key={i}
-              startIcon={i === 0 ? <FontAwesomeIcon icon={faCalendarAlt} /> : null}
-              sx={{
-                color: sortType === label ? "#00bfa6" : "black",
-                fontWeight: 600,
-                borderBottom:
-                  sortType === label ? "2px solid #00bfa6" : "2px solid transparent",
-                borderRadius: 0,
-                "&:hover": { color: "#00bfa6" },
-              }}
-              onClick={() => setSortType(label)}
-            >
-              {label}
-            </Button>
+            <Button key={i} startIcon={i === 0 ? <FontAwesomeIcon icon={faCalendarAlt} /> : null} sx={{ color: sortType === label ? "#00bfa6" : "black", fontWeight: 600, borderBottom: sortType === label ? "2px solid #00bfa6" : "2px solid transparent", borderRadius: 0, "&:hover": { color: "#00bfa6" }, }} onClick={() => setSortType(label)} > {label} </Button>
           )
         )}
       </Box>
 
-      {/* Main Content */}
       <Box className="grid grid-cols-1 md:grid-cols-3 gap-10 px-6 md:px-20 py-16">
-        {/* Left: Tour Cards */}
         <Box className="md:col-span-2">
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
             {filteredTours.length > 0 ? (
               filteredTours.map((tour, i) => (
-                <Card
-                  key={i}
-                  onClick={() =>
-                    navigate(`/tours/${tour.title.toLowerCase()}`, { state: tour })
-                  }
-                  className="shadow-md rounded-2xl overflow-hidden border border-gray-100 hover:shadow-xl transition-all duration-500 cursor-pointer"
-                >
+                <Card key={i} onClick={() => navigate(`/tours/${tour.title.toLowerCase()}`, { state: tour })} className="shadow-md rounded-2xl overflow-hidden border border-gray-100 hover:shadow-xl transition-all duration-500 cursor-pointer">
                   <div className="relative overflow-hidden group">
-                    <img
-                      src={tour.img}
-                      alt={tour.title}
-                      className="w-full h-64 object-cover transform transition-transform duration-[1200ms] ease-[cubic-bezier(0.23,1,0.32,1)] group-hover:scale-110"
-                    />
+                    <img src={tour.img} alt={tour.title} className="w-full h-64 object-cover transition-transform duration-1000 ease-in-out group-hover:scale-110"/>
                   </div>
                   <CardContent className="p-6">
                     <Typography
@@ -271,40 +207,14 @@ const Tours = () => {
                     </Typography>
 
                     <Box className="flex gap-2 mt-3">
-                      <Button
-                        startIcon={<FontAwesomeIcon icon={faCalendarAlt} />}
-                        variant="contained"
-                        sx={{
-                          backgroundColor: "#00bfa5",
-                          "&:hover": { backgroundColor: "#009e8f" },
-                          borderRadius: "50px",
-                          textTransform: "none",
-                        }}
-                      >
+                      <Button startIcon={<FontAwesomeIcon icon={faCalendarAlt} />} variant="contained" sx={{ backgroundColor: "#00bfa5", "&:hover": { backgroundColor: "#009e8f" }, borderRadius: "50px", textTransform: "none", }} >
                         1
                       </Button>
-                      <Button
-                        startIcon={<FontAwesomeIcon icon={faUser} />}
-                        variant="contained"
-                        sx={{
-                          backgroundColor: "#00bfa5",
-                          "&:hover": { backgroundColor: "#009e8f" },
-                          borderRadius: "50px",
-                          textTransform: "none",
-                        }}
-                      >
+                      <Button startIcon={<FontAwesomeIcon icon={faUser} />} variant="contained" sx={{ backgroundColor: "#00bfa5", "&:hover": { backgroundColor: "#009e8f" }, borderRadius: "50px", textTransform: "none", }} >
                         13+
                       </Button>
-                      <Button
-                        startIcon={<FontAwesomeIcon icon={faMapMarkerAlt} />}
-                        variant="contained"
-                        sx={{
-                          backgroundColor: "#00bfa5",
-                          "&:hover": { backgroundColor: "#009e8f" },
-                          borderRadius: "50px",
-                          textTransform: "none",
-                        }}
-                      >
+                      <Button startIcon={<FontAwesomeIcon icon={faMapMarkerAlt} />} variant="contained"sx={{
+                          backgroundColor: "#00bfa5", "&:hover": { backgroundColor: "#009e8f" }, borderRadius: "50px", textTransform: "none", }} >
                         Skiing
                       </Button>
                     </Box>
@@ -319,7 +229,6 @@ const Tours = () => {
           </div>
         </Box>
 
-        {/* Right Sidebar */}
         <Box className="flex flex-col gap-8">
           <Box className="bg-teal-400 text-white p-6 rounded-2xl">
             <Typography variant="h5" className="font-bold mb-3">
@@ -330,28 +239,10 @@ const Tours = () => {
             </Typography>
 
             <Box className="flex flex-col gap-3 mb-6">
-              <TextField
-                fullWidth
-                placeholder="Search Tour"
-                variant="filled"
-                value={search}
-                onChange={(e) => setSearch(e.target.value)}
-                sx={{
-                  backgroundColor: "rgba(255,255,255,0.2)",
-                  borderRadius: "6px",
-                  input: { color: "white" },
-                }}
-              />
-            
+              <TextField fullWidth placeholder="Search Tour" variant="filled" value={search} onChange={(e) => setSearch(e.target.value)} sx={{ backgroundColor: "rgba(255,255,255,0.2)", borderRadius: "6px", input: { color: "white" }, }}/>
             </Box>
-
           </Box>
-
-          <img
-            src="https://setsail.qodeinteractive.com/wp-content/uploads/2018/09/sidebar-img-1.jpg"
-            alt="Promo"
-            className="rounded-xl w-full hover:scale-105 transition-transform duration-700 ease-in-out"
-          />
+          <img src="https://setsail.qodeinteractive.com/wp-content/uploads/2018/09/sidebar-img-1.jpg" alt="Promo" className="rounded-xl w-full hover:scale-105 transition-transform duration-700 ease-in-out"/>
         </Box>
       </Box>
     </div>
