@@ -162,7 +162,6 @@ const handleSave = async () => {
 
   return (
     <div className="p-8">
-      {/* Header */}
       <div className="flex justify-between items-center mb-8">
         <h2 className="text-2xl font-semibold text-gray-800">Manage Destinations</h2>
         <button
@@ -190,7 +189,6 @@ const handleSave = async () => {
         </button>
       </div>
 
-      {/* Destination Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {destinations.length > 0 ? (
           destinations.map((dest) => (
@@ -228,7 +226,6 @@ const handleSave = async () => {
                   {dest.description || "No description available."}
                 </p>
 
-                {/* Gallery Preview */}
                 {dest.gallery && dest.gallery.length > 0 && (
                   <div>
                     <h4 className="text-sm font-semibold mt-3">Gallery</h4>
@@ -245,7 +242,6 @@ const handleSave = async () => {
                   </div>
                 )}
 
-                {/* Municipalities Preview */}
                 {dest.municipalities && dest.municipalities.length > 0 && (
                   <div>
                     <h4 className="text-sm font-semibold mt-3">Municipalities</h4>
@@ -288,7 +284,6 @@ const handleSave = async () => {
         )}
       </div>
 
-      {/* Modal */}
       {showModal && (
         <div className="fixed inset-0 bg-black bg-opacity-40 flex items-center justify-center z-50">
           <div className="bg-white p-8 rounded-lg w-full max-w-2xl shadow-lg">
