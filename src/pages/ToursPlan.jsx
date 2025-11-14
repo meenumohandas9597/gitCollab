@@ -46,76 +46,24 @@ const TourPlan = () => {
         Tour Plan
       </Typography>
 
-      <Box
-        sx={{
-          position: "relative",
-          "&::before": {
-            content: '""',
-            position: "absolute",
-            top: 0,
-            left: "30px",
-            width: "2px",
-            height: "100%",
-            backgroundColor: "#2ec4b6",
-          },
-        }}
-      >
+      <Box sx={{ position: "relative", "&::before": { content: '""', position: "absolute",top: 0, left: "30px", width: "2px", height: "100%", backgroundColor: "#2ec4b6", }, }} >
         {tourDays.map((day, index) => (
-          <Box
-            key={index}
-            sx={{
-              display: "flex",
-              mb: 6,
-              position: "relative",
-            }}
-          >
-            {/* Day Number */}
-            <Box
-              sx={{
-                backgroundColor: "#2ec4b6",
-                color: "#fff",
-                borderRadius: "6px",
-                width: "40px",
-                height: "40px",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                fontWeight: 700,
-                fontSize: "18px",
-                position: "relative",
-                zIndex: 2,
-                mr: 4,
-              }}
-            >
-              {day.day}
+          <Box key={index} sx={{ display: "flex", mb: 6, position: "relative", }} >
+            <Box sx={{ backgroundColor: "#2ec4b6", color: "#fff", borderRadius: "6px", width: "40px", height: "40px", display: "flex", alignItems: "center", justifyContent: "center", fontWeight: 700, fontSize: "18px", position: "relative", zIndex: 2,  mr: 4, }} > {day.day}
             </Box>
 
             {/* Content */}
             <Box sx={{ flex: 1 }}>
-              <Typography
-                variant="h6"
-                sx={{ fontWeight: 700, mb: 1, color: "#333" }}
-              >
+              <Typography variant="h6" sx={{ fontWeight: 700, mb: 1, color: "#333" }} >
                 Day {day.day}: {day.title}
               </Typography>
-              <Typography
-                variant="body1"
-                sx={{ mb: 1.5, color: "#555", lineHeight: 1.7 }}
-              >
+              <Typography variant="body1" sx={{ mb: 1.5, color: "#555", lineHeight: 1.7 }} >
                 {day.description}
               </Typography>
 
               <List sx={{ listStyleType: "disc", pl: 3 }}>
                 {day.items.map((item, idx) => (
-                  <ListItem
-                    key={idx}
-                    sx={{
-                      display: "list-item",
-                      py: 0,
-                      color: "#444",
-                      fontSize: "0.95rem",
-                    }}
-                  >
+                  <ListItem key={idx} sx={{ display: "list-item", py: 0, color: "#444", fontSize: "0.95rem", }} >
                     {item}
                   </ListItem>
                 ))}

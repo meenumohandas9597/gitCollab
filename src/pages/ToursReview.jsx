@@ -25,35 +25,30 @@ function ToursReview() {
 
   const renderStars = (count, editable, category) => {
     return [...Array(5)].map((_, i) => (
-      <FontAwesomeIcon
-        key={i}
-        icon={faStar}
-        className={`${i < count ? "text-cyan-500" : "text-gray-300 opacity-40"}
-                    text-lg cursor-pointer transition`}
-        onClick={() => {
-          if (editable) {
-            setUserRating((prev) => ({ ...prev, [category]: i + 1 }));
-          }
-        }}
+      <FontAwesomeIcon key={i} icon={faStar} className={`${i < count ? "text-cyan-500" : "text-gray-300 opacity-40"} text-lg cursor-pointer transition`} onClick={() => {
+        if (editable) {
+          setUserRating((prev) => ({ ...prev, [category]: i + 1 }));
+        }
+      }}
       />
     ));
   };
 
   return (
     <div className="space-y-16">
-      {/* --- Review Score Breakdown --- */}
       <div className="flex flex-col md:flex-row gap-8 px-6 py-10 bg-white rounded-2xl shadow-md">
         <div className="flex-1">
-          <h2 className="text-2xl font-semibold mb-2">
-            Reviews Scores and Score Breakdown
+          <h2 className="text-2xl font-semibold mb-3">
+            Reviews Scores & Score Breakdown
           </h2>
-          <p className="text-gray-500 mb-8">
-            Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus.
-            Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum.
-            Aenean imperdiet. Etiam ultricies nisi vel augue.
+          <p className="text-gray-600 leading-relaxed mb-8">
+            Our customers share their honest experiences to help you understand the quality
+            of our service. Each review score reflects real feedback based on comfort,
+            hospitality, cleanliness, and overall satisfaction. We value every review as it
+            helps us improve and provide a better experience for future guests.
           </p>
 
-          {/* Bars */}
+
           <div className="space-y-6">
             {reviewData.map((item, index) => (
               <div key={index}>
@@ -62,10 +57,7 @@ function ToursReview() {
                   <span>{item.value}%</span>
                 </div>
                 <div className="w-full bg-gray-200 h-3 rounded-full">
-                  <div
-                    className="h-3 bg-cyan-400 rounded-full"
-                    style={{ width: `${item.value}%` }}
-                  ></div>
+                  <div className="h-3 bg-cyan-400 rounded-full" style={{ width: `${item.value}%` }} > </div>
                 </div>
               </div>
             ))}
@@ -78,13 +70,8 @@ function ToursReview() {
         </div>
       </div>
 
-      {/* --- Reviewer Card --- */}
       <div className="bg-white rounded-2xl shadow-md p-8 flex flex-col md:flex-row gap-6 items-center md:items-start">
-        <img
-          src="https://i.pravatar.cc/100?img=3"
-          alt="Reviewer"
-          className="w-24 h-24 rounded-full object-cover"
-        />
+        <img src="https://i.pravatar.cc/100?img=3" alt="Reviewer" className="w-24 h-24 rounded-full object-cover" />
         <div className="flex-1">
           <h3 className="text-lg font-semibold">James Fisher</h3>
           <p className="text-gray-500 mb-3">
@@ -104,10 +91,8 @@ function ToursReview() {
         </div>
       </div>
 
-      {/* --- Post a Comment Section --- */}
       <div className="bg-cyan-100 rounded-2xl p-8 shadow-md">
         <h3 className="text-2xl font-semibold mb-4">Post a Comment</h3>
-
         <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 mb-6">
           {categories.map((c, i) => (
             <div key={i}>
@@ -119,26 +104,11 @@ function ToursReview() {
 
         <form className="space-y-4">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <input
-              type="text"
-              placeholder="Name"
-              className="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-cyan-400"
-            />
-            <input
-              type="email"
-              placeholder="Email"
-              className="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-cyan-400"
-            />
+            <input type="text" placeholder="Name" className="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-cyan-400" />
+            <input type="email" placeholder="Email" className="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-cyan-400" />
           </div>
-          <textarea
-            rows="4"
-            placeholder="Write your review..."
-            className="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-cyan-400"
-          ></textarea>
-          <button
-            type="submit"
-            className="bg-cyan-500 text-white px-6 py-2 rounded-lg hover:bg-cyan-600 transition"
-          >
+          <textarea rows="4" placeholder="Write your review..." className="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-cyan-400" ></textarea>
+          <button type="submit" className="bg-cyan-500 text-white px-6 py-2 rounded-lg hover:bg-cyan-600 transition" >
             Submit Review
           </button>
         </form>
